@@ -1,0 +1,1 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/Wolf3d.dir/Sources/main.c.o  -o Wolf3d  -L/Users/wstygg/Desktop/Wolf3d/../SDL2/lib  -L/Users/wstygg/Desktop/Wolf3d/../Vulkan/lib 

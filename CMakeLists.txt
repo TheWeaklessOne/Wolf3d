@@ -13,4 +13,4 @@ link_directories(
         ../SDL2/lib/
         ../Vulkan/lib/
 )
-add_executable(Wolf3d main.c)
+add_executable(Wolf3d Sources/main.c Includes/Wolf3d.h)
