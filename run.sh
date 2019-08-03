@@ -10,13 +10,6 @@ function configure_make()
 	fi
 }
 
-if [ ! -d SDL2_libs ]; then
-	mkdir SDL2_libs
-fi
-
-# install SDL2 basic library
-
-cd SDL2_libs
 git clone https://github.com/spurious/SDL-mirror.git SDL2
 cd SDL2 || exit
 DIR=$(pwd)
@@ -30,11 +23,6 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   sudo apt install libfreetype6 libfreetype6-dev
   sudo apt-get install automake
 fi
-
-# install SDL_ttf
-
-git clone https://github.com/Ecognize/SDL_ttf.git
-cd SDL_ttf || exit
 
 # upgrade timestamps for authoconfig
 

@@ -216,6 +216,39 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 ProcessorCount_cmd_sysctl:FILEPATH=/usr/sbin/sysctl
 
 //Value Computed by CMake
+Project_BINARY_DIR:STATIC=/Users/wstygg/Desktop/Wolf3d/cmake-build-debug
+
+//Value Computed by CMake
+Project_SOURCE_DIR:STATIC=/Users/wstygg/Desktop/Wolf3d
+
+//Value Computed by CMake
+RTv1_BINARY_DIR:STATIC=/Users/wstygg/Desktop/Wolf3d/cmake-build-debug
+
+//Value Computed by CMake
+RTv1_SOURCE_DIR:STATIC=/Users/wstygg/Desktop/Wolf3d
+
+//The directory containing a CMake configuration file for SDL2.framework.
+SDL2.framework_DIR:PATH=SDL2.framework_DIR-NOTFOUND
+
+//Path to a library.
+SDL2MAIN_LIBRARY:FILEPATH=SDL2MAIN_LIBRARY-NOTFOUND
+
+//The directory containing a CMake configuration file for SDL2.
+SDL2_DIR:PATH=SDL2_DIR-NOTFOUND
+
+//Path to a file.
+SDL2_INCLUDE_DIR:PATH=/Users/wstygg/Library/Frameworks/SDL2.framework/Headers
+
+//Where the SDL2 Library can be found
+SDL2_LIBRARY:STRING=/Users/wstygg/Library/Frameworks/SDL2.framework;-framework Cocoa
+
+//Path to a file.
+Vulkan_INCLUDE_DIR:PATH=/Users/wstygg/Library/Frameworks/vulkan.framework
+
+//Path to a library.
+Vulkan_LIBRARY:FILEPATH=/Users/wstygg/Library/Frameworks/vulkan.framework
+
+//Value Computed by CMake
 Wolf3d_BINARY_DIR:STATIC=/Users/wstygg/Desktop/Wolf3d/cmake-build-debug
 
 //Value Computed by CMake
@@ -361,6 +394,15 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding SDL2
+FIND_PACKAGE_MESSAGE_DETAILS_SDL2:INTERNAL=[/Users/wstygg/Library/Frameworks/SDL2.framework;-framework Cocoa][/Users/wstygg/Library/Frameworks/SDL2.framework/Headers][v()]
+//Details about finding Vulkan
+FIND_PACKAGE_MESSAGE_DETAILS_Vulkan:INTERNAL=[/Users/wstygg/Library/Frameworks/vulkan.framework][/Users/wstygg/Library/Frameworks/vulkan.framework][v()]
 //ADVANCED property for variable: ProcessorCount_cmd_sysctl
 ProcessorCount_cmd_sysctl-ADVANCED:INTERNAL=1
+SDL2_LIBRARY_TEMP:INTERNAL=/Users/wstygg/Library/Frameworks/SDL2.framework;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa;-framework Cocoa
+//ADVANCED property for variable: Vulkan_INCLUDE_DIR
+Vulkan_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Vulkan_LIBRARY
+Vulkan_LIBRARY-ADVANCED:INTERNAL=1
 
