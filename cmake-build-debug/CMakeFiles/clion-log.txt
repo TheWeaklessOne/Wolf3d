@@ -1,5 +1,5 @@
-/Users/wstygg/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/wstygg/Desktop/Wolf3d
+/Users/ojessi/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/ojessi/Desktop/Wolf3d
 -- Configuring done
-WARNING: Target "Wolf3d" requests linking to directory "/Users/wstygg/Desktop/Wolf3d".  Targets may link only to libraries.  CMake is dropping the item.
+WARNING: Target "Wolf3d" requests linking to directory "/Users/ojessi/Desktop/Wolf3d".  Targets may link only to libraries.  CMake is dropping the item.
 -- Generating done
--- Build files have been written to: /Users/wstygg/Desktop/Wolf3d/cmake-build-debug
+-- Build files have been written to: /Users/ojessi/Desktop/Wolf3d/cmake-build-debug

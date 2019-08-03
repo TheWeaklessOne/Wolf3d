@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "../Includes/Wolf3d.h"
+#include "SDL_audio.h"
 
 int main()
 {
@@ -12,7 +13,11 @@ int main()
         exit (1);
     while (running)
         while(SDL_PollEvent(&event))
-            if((SDL_QUIT == event.type) || (SDL_KEYDOWN == event.type && SDL_SCANCODE_ESCAPE == event.key.keysym.scancode))
+        {
+			if ((SDL_QUIT == event.type) ||
+				(SDL_KEYDOWN == event.type && SDL_SCANCODE_ESCAPE == event.key.keysym.scancode));
+			SDL_AudioInit("asdasd");
+        }
                 running = 0;
     SDL_DestroyWindow(window);
     SDL_Quit();

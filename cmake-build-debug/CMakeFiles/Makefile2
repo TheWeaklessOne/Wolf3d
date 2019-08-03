@@ -50,19 +50,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Users/wstygg/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /Users/ojessi/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /Users/wstygg/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /Users/ojessi/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/wstygg/Desktop/Wolf3d
+CMAKE_SOURCE_DIR = /Users/ojessi/Desktop/Wolf3d
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/wstygg/Desktop/Wolf3d/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/ojessi/Desktop/Wolf3d/cmake-build-debug
 
 #=============================================================================
 # Target rules for target CMakeFiles/Wolf3d.dir
@@ -71,7 +71,7 @@ CMAKE_BINARY_DIR = /Users/wstygg/Desktop/Wolf3d/cmake-build-debug
 CMakeFiles/Wolf3d.dir/all:
 	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/depend
 	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/wstygg/Desktop/Wolf3d/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target Wolf3d"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/ojessi/Desktop/Wolf3d/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target Wolf3d"
 .PHONY : CMakeFiles/Wolf3d.dir/all
 
 # Include target in all.
@@ -81,9 +81,9 @@ all: CMakeFiles/Wolf3d.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Wolf3d.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wstygg/Desktop/Wolf3d/cmake-build-debug/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ojessi/Desktop/Wolf3d/cmake-build-debug/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Wolf3d.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wstygg/Desktop/Wolf3d/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ojessi/Desktop/Wolf3d/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Wolf3d.dir/rule
 
 # Convenience name for target.
