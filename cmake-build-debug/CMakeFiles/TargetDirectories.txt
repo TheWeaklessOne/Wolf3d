@@ -1,3 +1,3 @@
-/Users/ojessi/Desktop/Wolf3d/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/ojessi/Desktop/Wolf3d/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/ojessi/Desktop/Wolf3d/cmake-build-debug/CMakeFiles/Wolf3d.dir
+/home/wstygg/CLionProjects/Wolf3d/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/wstygg/CLionProjects/Wolf3d/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/wstygg/CLionProjects/Wolf3d/cmake-build-debug/CMakeFiles/Wolf3d.dir

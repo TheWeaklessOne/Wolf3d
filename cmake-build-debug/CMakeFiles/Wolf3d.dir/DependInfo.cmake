@@ -4,14 +4,19 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/ojessi/Desktop/Wolf3d/Sources/main.c" "/Users/ojessi/Desktop/Wolf3d/cmake-build-debug/CMakeFiles/Wolf3d.dir/Sources/main.c.o"
+  "/home/wstygg/CLionProjects/Wolf3d/Sources/Utils/ft.c" "/home/wstygg/CLionProjects/Wolf3d/cmake-build-debug/CMakeFiles/Wolf3d.dir/Sources/Utils/ft.c.o"
+  "/home/wstygg/CLionProjects/Wolf3d/Sources/Utils/list.c" "/home/wstygg/CLionProjects/Wolf3d/cmake-build-debug/CMakeFiles/Wolf3d.dir/Sources/Utils/list.c.o"
+  "/home/wstygg/CLionProjects/Wolf3d/Sources/Utils/list_2.c" "/home/wstygg/CLionProjects/Wolf3d/cmake-build-debug/CMakeFiles/Wolf3d.dir/Sources/Utils/list_2.c.o"
+  "/home/wstygg/CLionProjects/Wolf3d/Sources/keys.c" "/home/wstygg/CLionProjects/Wolf3d/cmake-build-debug/CMakeFiles/Wolf3d.dir/Sources/keys.c.o"
+  "/home/wstygg/CLionProjects/Wolf3d/Sources/main.c" "/home/wstygg/CLionProjects/Wolf3d/cmake-build-debug/CMakeFiles/Wolf3d.dir/Sources/main.c.o"
+  "/home/wstygg/CLionProjects/Wolf3d/Sources/sdl.c" "/home/wstygg/CLionProjects/Wolf3d/cmake-build-debug/CMakeFiles/Wolf3d.dir/Sources/sdl.c.o"
+  "/home/wstygg/CLionProjects/Wolf3d/Sources/sdl_init.c" "/home/wstygg/CLionProjects/Wolf3d/cmake-build-debug/CMakeFiles/Wolf3d.dir/Sources/sdl_init.c.o"
   )
-set(CMAKE_C_COMPILER_ID "AppleClang")
+set(CMAKE_C_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
-  "/Users/ojessi/Library/Frameworks/SDL2.framework/Headers"
-  "/Users/ojessi/Desktop/Vulkan/include"
+  "../Includes"
   )
 
 # Targets to which this target links.

@@ -1,14 +1,11 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.16)
 project(Wolf3d C)
 
 set(CMAKE_C_STANDARD 99)
 
-set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/CMake)
+include_directories(Includes)
 
-find_package(SDL2 REQUIRED)
+add_executable(Wolf3d Sources/main.c Includes/wolf.h Includes/list.h Sources/Utils/list.c Sources/Utils/list_2.c Sources/Utils/ft.c Sources/sdl_init.c Sources/sdl.c Sources/keys.c)
 
-include_directories(${SDL2_INCLUDE_DIR} /Users/ojessi/Desktop/Vulkan/include)
-link_directories(/Users/wstygg/Desktop/Vulkan/lib)
 
-add_executable(Wolf3d Sources/main.c Includes/Wolf3d.h Includes/constants.h)
-target_link_libraries(Wolf3d ${SDL2_LIBRARY} ${PROJECT_SOURCE_DIR} /Users/ojessi/Desktop/Vulkan/lib/libvulkan.1.dylib)
+target_link_libraries(Wolf3d m SDL2 SDL2_image)
