@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   keys.c                                             :+:      :+:    :+:   */
+/*   check_file.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/13 16:11:46 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/13 16:54:53 by wstygg           ###   ########.fr       */
+/*   Created: 2020/05/13 17:21:32 by wstygg            #+#    #+#             */
+/*   Updated: 2020/05/13 17:21:32 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
 
-void			move_up(t_wolf *wolf)
+int					check_file(const char *file, unsigned check)
 {
-	wolf->player.y--;
-}
+	struct stat		st;
+	int				ret;
 
-void			move_down(t_wolf *wolf)
-{
-	wolf->player.y++;
-}
-
-void			move_left(t_wolf *wolf)
-{
-	wolf->player.x--;
-}
-
-void			move_right(t_wolf *wolf)
-{
-	wolf->player.x++;
+	if (!file || stat(file, &st) == -1)
+		return (-1);
+	ret = 1;
+	if (check & IS_D)
+		ret &= S_ISDIR(st.st_mode);
+	if (check & IS_R)
+		ret &= ((st.st_mode & S_IRUSR) != 0);
+	if (check & IS_W)
+		ret &= ((st.st_mode & S_IWUSR) != 0);
+	if (check & IS_X)
+		ret &= ((st.st_mode & S_IXUSR) != 0);
+	return (ret);
 }

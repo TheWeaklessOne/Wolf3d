@@ -123,6 +123,87 @@ Wolf3d/fast:
 	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/build
 .PHONY : Wolf3d/fast
 
+Sources/Map/add_to_text.o: Sources/Map/add_to_text.c.o
+
+.PHONY : Sources/Map/add_to_text.o
+
+# target to build an object file
+Sources/Map/add_to_text.c.o:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/Map/add_to_text.c.o
+.PHONY : Sources/Map/add_to_text.c.o
+
+Sources/Map/add_to_text.i: Sources/Map/add_to_text.c.i
+
+.PHONY : Sources/Map/add_to_text.i
+
+# target to preprocess a source file
+Sources/Map/add_to_text.c.i:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/Map/add_to_text.c.i
+.PHONY : Sources/Map/add_to_text.c.i
+
+Sources/Map/add_to_text.s: Sources/Map/add_to_text.c.s
+
+.PHONY : Sources/Map/add_to_text.s
+
+# target to generate assembly for a file
+Sources/Map/add_to_text.c.s:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/Map/add_to_text.c.s
+.PHONY : Sources/Map/add_to_text.c.s
+
+Sources/Map/check_file.o: Sources/Map/check_file.c.o
+
+.PHONY : Sources/Map/check_file.o
+
+# target to build an object file
+Sources/Map/check_file.c.o:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/Map/check_file.c.o
+.PHONY : Sources/Map/check_file.c.o
+
+Sources/Map/check_file.i: Sources/Map/check_file.c.i
+
+.PHONY : Sources/Map/check_file.i
+
+# target to preprocess a source file
+Sources/Map/check_file.c.i:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/Map/check_file.c.i
+.PHONY : Sources/Map/check_file.c.i
+
+Sources/Map/check_file.s: Sources/Map/check_file.c.s
+
+.PHONY : Sources/Map/check_file.s
+
+# target to generate assembly for a file
+Sources/Map/check_file.c.s:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/Map/check_file.c.s
+.PHONY : Sources/Map/check_file.c.s
+
+Sources/Map/read_map.o: Sources/Map/read_map.c.o
+
+.PHONY : Sources/Map/read_map.o
+
+# target to build an object file
+Sources/Map/read_map.c.o:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/Map/read_map.c.o
+.PHONY : Sources/Map/read_map.c.o
+
+Sources/Map/read_map.i: Sources/Map/read_map.c.i
+
+.PHONY : Sources/Map/read_map.i
+
+# target to preprocess a source file
+Sources/Map/read_map.c.i:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/Map/read_map.c.i
+.PHONY : Sources/Map/read_map.c.i
+
+Sources/Map/read_map.s: Sources/Map/read_map.c.s
+
+.PHONY : Sources/Map/read_map.s
+
+# target to generate assembly for a file
+Sources/Map/read_map.c.s:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/Map/read_map.c.s
+.PHONY : Sources/Map/read_map.c.s
+
 Sources/Utils/ft.o: Sources/Utils/ft.c.o
 
 .PHONY : Sources/Utils/ft.o
@@ -149,6 +230,60 @@ Sources/Utils/ft.s: Sources/Utils/ft.c.s
 Sources/Utils/ft.c.s:
 	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/Utils/ft.c.s
 .PHONY : Sources/Utils/ft.c.s
+
+Sources/Utils/ft_2.o: Sources/Utils/ft_2.c.o
+
+.PHONY : Sources/Utils/ft_2.o
+
+# target to build an object file
+Sources/Utils/ft_2.c.o:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/Utils/ft_2.c.o
+.PHONY : Sources/Utils/ft_2.c.o
+
+Sources/Utils/ft_2.i: Sources/Utils/ft_2.c.i
+
+.PHONY : Sources/Utils/ft_2.i
+
+# target to preprocess a source file
+Sources/Utils/ft_2.c.i:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/Utils/ft_2.c.i
+.PHONY : Sources/Utils/ft_2.c.i
+
+Sources/Utils/ft_2.s: Sources/Utils/ft_2.c.s
+
+.PHONY : Sources/Utils/ft_2.s
+
+# target to generate assembly for a file
+Sources/Utils/ft_2.c.s:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/Utils/ft_2.c.s
+.PHONY : Sources/Utils/ft_2.c.s
+
+Sources/Utils/get_nl.o: Sources/Utils/get_nl.c.o
+
+.PHONY : Sources/Utils/get_nl.o
+
+# target to build an object file
+Sources/Utils/get_nl.c.o:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/Utils/get_nl.c.o
+.PHONY : Sources/Utils/get_nl.c.o
+
+Sources/Utils/get_nl.i: Sources/Utils/get_nl.c.i
+
+.PHONY : Sources/Utils/get_nl.i
+
+# target to preprocess a source file
+Sources/Utils/get_nl.c.i:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/Utils/get_nl.c.i
+.PHONY : Sources/Utils/get_nl.c.i
+
+Sources/Utils/get_nl.s: Sources/Utils/get_nl.c.s
+
+.PHONY : Sources/Utils/get_nl.s
+
+# target to generate assembly for a file
+Sources/Utils/get_nl.c.s:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/Utils/get_nl.c.s
+.PHONY : Sources/Utils/get_nl.c.s
 
 Sources/Utils/list.o: Sources/Utils/list.c.o
 
@@ -312,6 +447,33 @@ Sources/sdl_init.c.s:
 	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/sdl_init.c.s
 .PHONY : Sources/sdl_init.c.s
 
+Sources/wolf_init.o: Sources/wolf_init.c.o
+
+.PHONY : Sources/wolf_init.o
+
+# target to build an object file
+Sources/wolf_init.c.o:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/wolf_init.c.o
+.PHONY : Sources/wolf_init.c.o
+
+Sources/wolf_init.i: Sources/wolf_init.c.i
+
+.PHONY : Sources/wolf_init.i
+
+# target to preprocess a source file
+Sources/wolf_init.c.i:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/wolf_init.c.i
+.PHONY : Sources/wolf_init.c.i
+
+Sources/wolf_init.s: Sources/wolf_init.c.s
+
+.PHONY : Sources/wolf_init.s
+
+# target to generate assembly for a file
+Sources/wolf_init.c.s:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/wolf_init.c.s
+.PHONY : Sources/wolf_init.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -321,9 +483,24 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Wolf3d"
+	@echo "... Sources/Map/add_to_text.o"
+	@echo "... Sources/Map/add_to_text.i"
+	@echo "... Sources/Map/add_to_text.s"
+	@echo "... Sources/Map/check_file.o"
+	@echo "... Sources/Map/check_file.i"
+	@echo "... Sources/Map/check_file.s"
+	@echo "... Sources/Map/read_map.o"
+	@echo "... Sources/Map/read_map.i"
+	@echo "... Sources/Map/read_map.s"
 	@echo "... Sources/Utils/ft.o"
 	@echo "... Sources/Utils/ft.i"
 	@echo "... Sources/Utils/ft.s"
+	@echo "... Sources/Utils/ft_2.o"
+	@echo "... Sources/Utils/ft_2.i"
+	@echo "... Sources/Utils/ft_2.s"
+	@echo "... Sources/Utils/get_nl.o"
+	@echo "... Sources/Utils/get_nl.i"
+	@echo "... Sources/Utils/get_nl.s"
 	@echo "... Sources/Utils/list.o"
 	@echo "... Sources/Utils/list.i"
 	@echo "... Sources/Utils/list.s"
@@ -342,6 +519,9 @@ help:
 	@echo "... Sources/sdl_init.o"
 	@echo "... Sources/sdl_init.i"
 	@echo "... Sources/sdl_init.s"
+	@echo "... Sources/wolf_init.o"
+	@echo "... Sources/wolf_init.i"
+	@echo "... Sources/wolf_init.s"
 .PHONY : help
 
 

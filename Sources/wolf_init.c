@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   keys.c                                             :+:      :+:    :+:   */
+/*   wolf_init.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/13 16:11:46 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/13 16:54:53 by wstygg           ###   ########.fr       */
+/*   Created: 2020/05/13 17:23:34 by wstygg            #+#    #+#             */
+/*   Updated: 2020/05/13 22:57:55 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
 
-void			move_up(t_wolf *wolf)
+void					wolf_init(t_wolf *wolf, int argc, char *argv[])
 {
-	wolf->player.y--;
-}
-
-void			move_down(t_wolf *wolf)
-{
-	wolf->player.y++;
-}
-
-void			move_left(t_wolf *wolf)
-{
-	wolf->player.x--;
-}
-
-void			move_right(t_wolf *wolf)
-{
-	wolf->player.x++;
+	if (argc != 2)
+		ft_crash("Using: ./wolf3d [Map]");
+	wolf->map_h = 0;
+	wolf->map_w = 0;
+	read_map(argv[1], wolf);
 }

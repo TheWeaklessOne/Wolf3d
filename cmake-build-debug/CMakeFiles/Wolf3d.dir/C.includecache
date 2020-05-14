@@ -21,6 +21,8 @@ SDL.h
 -
 SDL_image.h
 -
+fcntl.h
+-
 float.h
 -
 stdio.h
@@ -38,7 +40,7 @@ sys/types.h
 list.h
 ../Includes/list.h
 
-/home/wstygg/CLionProjects/Wolf3d/Sources/sdl.c
+/home/wstygg/CLionProjects/Wolf3d/Sources/main.c
 wolf.h
 /home/wstygg/CLionProjects/Wolf3d/Sources/wolf.h
 

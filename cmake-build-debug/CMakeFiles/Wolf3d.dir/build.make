@@ -148,6 +148,84 @@ CMakeFiles/Wolf3d.dir/Sources/keys.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Wolf3d.dir/Sources/keys.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wstygg/CLionProjects/Wolf3d/Sources/keys.c -o CMakeFiles/Wolf3d.dir/Sources/keys.c.s
 
+CMakeFiles/Wolf3d.dir/Sources/Utils/get_nl.c.o: CMakeFiles/Wolf3d.dir/flags.make
+CMakeFiles/Wolf3d.dir/Sources/Utils/get_nl.c.o: ../Sources/Utils/get_nl.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wstygg/CLionProjects/Wolf3d/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Wolf3d.dir/Sources/Utils/get_nl.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Wolf3d.dir/Sources/Utils/get_nl.c.o   -c /home/wstygg/CLionProjects/Wolf3d/Sources/Utils/get_nl.c
+
+CMakeFiles/Wolf3d.dir/Sources/Utils/get_nl.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Wolf3d.dir/Sources/Utils/get_nl.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wstygg/CLionProjects/Wolf3d/Sources/Utils/get_nl.c > CMakeFiles/Wolf3d.dir/Sources/Utils/get_nl.c.i
+
+CMakeFiles/Wolf3d.dir/Sources/Utils/get_nl.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Wolf3d.dir/Sources/Utils/get_nl.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wstygg/CLionProjects/Wolf3d/Sources/Utils/get_nl.c -o CMakeFiles/Wolf3d.dir/Sources/Utils/get_nl.c.s
+
+CMakeFiles/Wolf3d.dir/Sources/Map/read_map.c.o: CMakeFiles/Wolf3d.dir/flags.make
+CMakeFiles/Wolf3d.dir/Sources/Map/read_map.c.o: ../Sources/Map/read_map.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wstygg/CLionProjects/Wolf3d/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/Wolf3d.dir/Sources/Map/read_map.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Wolf3d.dir/Sources/Map/read_map.c.o   -c /home/wstygg/CLionProjects/Wolf3d/Sources/Map/read_map.c
+
+CMakeFiles/Wolf3d.dir/Sources/Map/read_map.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Wolf3d.dir/Sources/Map/read_map.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wstygg/CLionProjects/Wolf3d/Sources/Map/read_map.c > CMakeFiles/Wolf3d.dir/Sources/Map/read_map.c.i
+
+CMakeFiles/Wolf3d.dir/Sources/Map/read_map.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Wolf3d.dir/Sources/Map/read_map.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wstygg/CLionProjects/Wolf3d/Sources/Map/read_map.c -o CMakeFiles/Wolf3d.dir/Sources/Map/read_map.c.s
+
+CMakeFiles/Wolf3d.dir/Sources/Map/check_file.c.o: CMakeFiles/Wolf3d.dir/flags.make
+CMakeFiles/Wolf3d.dir/Sources/Map/check_file.c.o: ../Sources/Map/check_file.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wstygg/CLionProjects/Wolf3d/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/Wolf3d.dir/Sources/Map/check_file.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Wolf3d.dir/Sources/Map/check_file.c.o   -c /home/wstygg/CLionProjects/Wolf3d/Sources/Map/check_file.c
+
+CMakeFiles/Wolf3d.dir/Sources/Map/check_file.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Wolf3d.dir/Sources/Map/check_file.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wstygg/CLionProjects/Wolf3d/Sources/Map/check_file.c > CMakeFiles/Wolf3d.dir/Sources/Map/check_file.c.i
+
+CMakeFiles/Wolf3d.dir/Sources/Map/check_file.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Wolf3d.dir/Sources/Map/check_file.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wstygg/CLionProjects/Wolf3d/Sources/Map/check_file.c -o CMakeFiles/Wolf3d.dir/Sources/Map/check_file.c.s
+
+CMakeFiles/Wolf3d.dir/Sources/wolf_init.c.o: CMakeFiles/Wolf3d.dir/flags.make
+CMakeFiles/Wolf3d.dir/Sources/wolf_init.c.o: ../Sources/wolf_init.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wstygg/CLionProjects/Wolf3d/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/Wolf3d.dir/Sources/wolf_init.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Wolf3d.dir/Sources/wolf_init.c.o   -c /home/wstygg/CLionProjects/Wolf3d/Sources/wolf_init.c
+
+CMakeFiles/Wolf3d.dir/Sources/wolf_init.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Wolf3d.dir/Sources/wolf_init.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wstygg/CLionProjects/Wolf3d/Sources/wolf_init.c > CMakeFiles/Wolf3d.dir/Sources/wolf_init.c.i
+
+CMakeFiles/Wolf3d.dir/Sources/wolf_init.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Wolf3d.dir/Sources/wolf_init.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wstygg/CLionProjects/Wolf3d/Sources/wolf_init.c -o CMakeFiles/Wolf3d.dir/Sources/wolf_init.c.s
+
+CMakeFiles/Wolf3d.dir/Sources/Map/add_to_text.c.o: CMakeFiles/Wolf3d.dir/flags.make
+CMakeFiles/Wolf3d.dir/Sources/Map/add_to_text.c.o: ../Sources/Map/add_to_text.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wstygg/CLionProjects/Wolf3d/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/Wolf3d.dir/Sources/Map/add_to_text.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Wolf3d.dir/Sources/Map/add_to_text.c.o   -c /home/wstygg/CLionProjects/Wolf3d/Sources/Map/add_to_text.c
+
+CMakeFiles/Wolf3d.dir/Sources/Map/add_to_text.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Wolf3d.dir/Sources/Map/add_to_text.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wstygg/CLionProjects/Wolf3d/Sources/Map/add_to_text.c > CMakeFiles/Wolf3d.dir/Sources/Map/add_to_text.c.i
+
+CMakeFiles/Wolf3d.dir/Sources/Map/add_to_text.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Wolf3d.dir/Sources/Map/add_to_text.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wstygg/CLionProjects/Wolf3d/Sources/Map/add_to_text.c -o CMakeFiles/Wolf3d.dir/Sources/Map/add_to_text.c.s
+
+CMakeFiles/Wolf3d.dir/Sources/Utils/ft_2.c.o: CMakeFiles/Wolf3d.dir/flags.make
+CMakeFiles/Wolf3d.dir/Sources/Utils/ft_2.c.o: ../Sources/Utils/ft_2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wstygg/CLionProjects/Wolf3d/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/Wolf3d.dir/Sources/Utils/ft_2.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Wolf3d.dir/Sources/Utils/ft_2.c.o   -c /home/wstygg/CLionProjects/Wolf3d/Sources/Utils/ft_2.c
+
+CMakeFiles/Wolf3d.dir/Sources/Utils/ft_2.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Wolf3d.dir/Sources/Utils/ft_2.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/wstygg/CLionProjects/Wolf3d/Sources/Utils/ft_2.c > CMakeFiles/Wolf3d.dir/Sources/Utils/ft_2.c.i
+
+CMakeFiles/Wolf3d.dir/Sources/Utils/ft_2.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Wolf3d.dir/Sources/Utils/ft_2.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/wstygg/CLionProjects/Wolf3d/Sources/Utils/ft_2.c -o CMakeFiles/Wolf3d.dir/Sources/Utils/ft_2.c.s
+
 # Object files for target Wolf3d
 Wolf3d_OBJECTS = \
 "CMakeFiles/Wolf3d.dir/Sources/main.c.o" \
@@ -156,7 +234,13 @@ Wolf3d_OBJECTS = \
 "CMakeFiles/Wolf3d.dir/Sources/Utils/ft.c.o" \
 "CMakeFiles/Wolf3d.dir/Sources/sdl_init.c.o" \
 "CMakeFiles/Wolf3d.dir/Sources/sdl.c.o" \
-"CMakeFiles/Wolf3d.dir/Sources/keys.c.o"
+"CMakeFiles/Wolf3d.dir/Sources/keys.c.o" \
+"CMakeFiles/Wolf3d.dir/Sources/Utils/get_nl.c.o" \
+"CMakeFiles/Wolf3d.dir/Sources/Map/read_map.c.o" \
+"CMakeFiles/Wolf3d.dir/Sources/Map/check_file.c.o" \
+"CMakeFiles/Wolf3d.dir/Sources/wolf_init.c.o" \
+"CMakeFiles/Wolf3d.dir/Sources/Map/add_to_text.c.o" \
+"CMakeFiles/Wolf3d.dir/Sources/Utils/ft_2.c.o"
 
 # External object files for target Wolf3d
 Wolf3d_EXTERNAL_OBJECTS =
@@ -168,9 +252,15 @@ Wolf3d: CMakeFiles/Wolf3d.dir/Sources/Utils/ft.c.o
 Wolf3d: CMakeFiles/Wolf3d.dir/Sources/sdl_init.c.o
 Wolf3d: CMakeFiles/Wolf3d.dir/Sources/sdl.c.o
 Wolf3d: CMakeFiles/Wolf3d.dir/Sources/keys.c.o
+Wolf3d: CMakeFiles/Wolf3d.dir/Sources/Utils/get_nl.c.o
+Wolf3d: CMakeFiles/Wolf3d.dir/Sources/Map/read_map.c.o
+Wolf3d: CMakeFiles/Wolf3d.dir/Sources/Map/check_file.c.o
+Wolf3d: CMakeFiles/Wolf3d.dir/Sources/wolf_init.c.o
+Wolf3d: CMakeFiles/Wolf3d.dir/Sources/Map/add_to_text.c.o
+Wolf3d: CMakeFiles/Wolf3d.dir/Sources/Utils/ft_2.c.o
 Wolf3d: CMakeFiles/Wolf3d.dir/build.make
 Wolf3d: CMakeFiles/Wolf3d.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wstygg/CLionProjects/Wolf3d/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable Wolf3d"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wstygg/CLionProjects/Wolf3d/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking C executable Wolf3d"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Wolf3d.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
