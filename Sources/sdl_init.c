@@ -40,10 +40,10 @@ static void			functions_init(t_sdl *sdl)
 	i = -1;
 	while (++i < SDL_NUM_SCANCODES)
 		sdl->do_key[i] = NULL;
-	sdl->do_key[SDL_SCANCODE_W] = move_up;
-	sdl->do_key[SDL_SCANCODE_S] = move_down;
-	sdl->do_key[SDL_SCANCODE_A] = move_left;
-	sdl->do_key[SDL_SCANCODE_D] = move_right;
+	sdl->do_key[SDL_SCANCODE_W] = move_forward;
+	sdl->do_key[SDL_SCANCODE_S] = move_backward;
+	sdl->do_key[SDL_SCANCODE_A] = angle_left;
+	sdl->do_key[SDL_SCANCODE_D] = angle_right;
 }
 
 void				sdl_init(t_sdl *sdl)

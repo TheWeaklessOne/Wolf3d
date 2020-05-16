@@ -6,28 +6,50 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 16:11:46 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/13 16:54:53 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/16 19:21:31 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
 
-void			move_up(t_wolf *wolf)
+void				move_forward(t_wolf *wolf, const int *keys)
 {
-	wolf->player.y--;
+	const double	new_x = SDL_cos(wolf->player.a) *
+			(keys[SDL_SCANCODE_LSHIFT] ? 0.15 : 0.1);
+	const double	new_y = SDL_sin(wolf->player.a) *
+			(keys[SDL_SCANCODE_LSHIFT] ? 0.15 : 0.1);
+	const char		c = wolf->map.map[(int)(wolf->player.y + new_y)]
+									[(int)(wolf->player.x + new_x)];
+
+	if (c < CHAR_WALL_1 || c >= CHAR_WALLS_N)
+	{
+		wolf->player.x += new_x;
+		wolf->player.y += new_y;
+	}
 }
 
-void			move_down(t_wolf *wolf)
+void				move_backward(t_wolf *wolf, const int *keys)
 {
-	wolf->player.y++;
+	const double	new_x = SDL_cos(wolf->player.a) *
+			(keys[SDL_SCANCODE_LSHIFT] ? 0.15 : 0.1);
+	const double	new_y = SDL_sin(wolf->player.a) *
+			(keys[SDL_SCANCODE_LSHIFT] ? 0.15 : 0.1);
+	const char		c = wolf->map.map[(int)(wolf->player.y - new_y)]
+	[(int)(wolf->player.x - new_x)];
+
+	if (c < CHAR_WALL_1 || c >= CHAR_WALLS_N)
+	{
+		wolf->player.x -= new_x;
+		wolf->player.y -= new_y;
+	}
 }
 
-void			move_left(t_wolf *wolf)
+void				angle_left(t_wolf *wolf, const int *keys)
 {
-	wolf->player.x--;
+	wolf->player.a -= 0.025 * (keys[SDL_SCANCODE_LSHIFT] ? 1.5 : 1);
 }
 
-void			move_right(t_wolf *wolf)
+void			angle_right(t_wolf *wolf, const int *keys)
 {
-	wolf->player.x++;
+	wolf->player.a += 0.025 * (keys[SDL_SCANCODE_LSHIFT] ? 1.5 : 1);
 }

@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 17:20:17 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/13 23:43:53 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/16 13:00:31 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ static int			open_map(const char *path)
 
 static int			is_wall(const char c)
 {
-	return (c == CHAR_WALL_REG);
+	return (c >= CHAR_WALL_1 && c < CHAR_WALLS_N);
 }
 
-static void			check_line(const char *line, const int h, t_wolf *wolf)
+static void			check_line(char *line, const int h, t_player *player)
 {
 	register int	i;
 	char			c;
@@ -43,25 +43,27 @@ static void			check_line(const char *line, const int h, t_wolf *wolf)
 	while (line[++i])
 	{
 		c = line[i];
-		if (c != CHAR_PLAYER && c != CHAR_EMPTY && c != CHAR_WALL_REG)
-			ft_crash("Map error on [%d] line: unknown symbol!", h);
+		if (c != CHAR_PLAYER && c != CHAR_EMPTY && c < CHAR_WALL_1 &&
+				c >= CHAR_WALLS_N)
+			ft_crash("Map error on [%d] line: unknown symbol!", h + 1);
 		if (c == CHAR_PLAYER)
 		{
-			wolf->player.x = i * MAP_SCALE;
-			wolf->player.y = (h - 1) * MAP_SCALE;
+			player->x = i;
+			player->y = h;
+			line[i] = CHAR_EMPTY;
 		}
 	}
 }
 
-static void			check_map(char **map, t_wolf *wolf)
+static void			check_map(char **map, t_map *map_s, t_player *player)
 {
 	register int	h;
 	register int	i;
 	char			*line;
-	int				player;
+	int				player_n;
 
 	i = -1;
-	player = 0;
+	player_n = 0;
 	line = map[0];
 	while (!(h = 0) && line[++i])
 		if (!is_wall(line[i]))
@@ -70,19 +72,19 @@ static void			check_map(char **map, t_wolf *wolf)
 	{
 		if (!is_wall(map[h][0]) || !is_wall(map[h][ft_strlen(map[h]) - 1]))
 			ft_crash("Map error on [%d] line: "WALL_ERROR, h + 1);
-		check_line(map[h], h + 1, wolf);
-		player += ft_char_count(map[h], CHAR_PLAYER);
+		player_n += ft_char_count(map[h], CHAR_PLAYER);
+		check_line(map[h], h, player);
 	}
 	line = map[h];
 	i = -1;
 	while (line[++i])
 		if (!is_wall(line[i]))
 			ft_crash("Map error on [%d] line: "WALL_ERROR, h + 1);
-	if (player != 1)
+	if (player_n != 1)
 		ft_crash("Map error: there have to be one player on map!");
 }
 
-void				read_map(const char *path, t_wolf *wolf)
+void				read_map(const char *path, t_map *map_s, t_player *player)
 {
 	int				h;
 	int				fd;
@@ -96,13 +98,15 @@ void				read_map(const char *path, t_wolf *wolf)
 	while (get_nl(fd, &line) == 1)
 	{
 		h++;
-		if (ft_strlen(line) > wolf->map_w)
-			wolf->map_w = ft_strlen(line);
+		if (ft_strlen(line) > map_s->map_w)
+			map_s->map_w = ft_strlen(line);
 		map = add_to_text(map, line);
 	}
 	if (!line || !*line)
 		ft_crash("Path [%s] is empty!", path);
-	check_map(map, wolf);
-	wolf->map = map;
-	wolf->map_h = h;
+	check_map(map, map_s, player);
+	map_s->map = map;
+	map_s->map_h = h;
+	map_s->rect_w = map_s->map_w;
+	map_s->rect_h = map_s->map_h;
 }

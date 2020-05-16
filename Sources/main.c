@@ -6,76 +6,97 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 15:05:44 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/14 14:27:13 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/16 18:52:57 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
 
-static void			draw_rectangle(const int img_w, const int img_h, const int x, const int y, const int w, const int h, unsigned color, unsigned  *pixels)
+static unsigned		get_wall_color(const char c)
+{
+	if (c == CHAR_WALL_1)
+		return (0x3ac292);
+	else if (c == CHAR_WALL_2)
+		return (0xdbb344);
+	else if (c == CHAR_WALL_3)
+		return (0x46309c);
+	return (0);
+}
+
+static void			draw_rectangle(const t_rect rect, const unsigned color,
+									unsigned  *pixels)
 {
 	register int	i;
 	register int	j;
-	int cx;
-	int cy;
+	unsigned		cx;
+	unsigned		cy;
 
-	i = -1;
-	while (++i < w && (j = -1))
-		while (++j < h)
+	j = -1;
+	while (++j < rect.h && (i = -1))
+		while (++i < rect.w)
 		{
-			cx = x + i;
-			cy = y + j;
-			if (cx>=img_w || cy>=img_h)
-				continue;
-			pixels[cx + cy*img_w] = color;
+			cx = rect.x + i;
+			cy = rect.y + j;
+			if (cx < WIDTH && cy < HEIGHT)
+				pixels[cx + cy * WIDTH] = color;
 		}
 }
-//0x4cd4ab
 
-static void			render(unsigned *pixels, const t_wolf wolf)
+static void			set_pixel(const int x, const int y, const unsigned color,
+								unsigned *pixels)
 {
-	const size_t win_w = 1024; // image width
-	const size_t win_h = 512;  // image height
+	if (x >= 0 && x < WIDTH && y >= 0 && y < HEIGHT)
+		pixels[x + y * WIDTH] = color;
+}
 
-	const size_t map_w = 16; // map width
-	const size_t map_h = 16; // map height
+static void			map_render(const t_map map, const t_player player, unsigned *pixels)
+{
+	register int	i;
+	register int	j;
 
-	float player_x = 3.456; // player x position
-	float player_y = 2.345; // player y position
-	float player_a = 1.8f; // player view direction
-	const float fov = M_PI/3.; // field of view
-
-	const size_t rect_w = win_w/(map_w*2);
-	const size_t rect_h = win_h/map_h;
-	for (size_t j=0; j<map_h; j++) { // draw the map
-		for (size_t i=0; i<map_w; i++) {
-			if (wolf.map[j][i] == CHAR_EMPTY)
-				continue ; // skip empty spaces
-			size_t rect_x = i*rect_w;
-			size_t rect_y = j*rect_h;
-			draw_rectangle(win_w, win_h, rect_x, rect_y, rect_w, rect_h, 0x4cd4ab, pixels);
+	j = -1;
+	while (++j < map.map_h && (i = -1))
+		while (++i < map.map_h)
+		{
+			unsigned rect_x = i * map.rect_w;
+			unsigned rect_y = j * map.rect_h;
+			if (map.map[j][i] != CHAR_EMPTY)
+				draw_rectangle((t_rect){rect_x, rect_y, map.rect_w, map.rect_h}, 0x424242, pixels);
+			//get_wall_color(map.map[j][i])
 		}
-	}
+}
 
-	for (size_t i=0; i<win_w/2; i++) { // draw the visibility cone AND the "3D" view
-		float angle = player_a-fov/2 + fov*i/(float)(win_w/2);
-		for (float t=0; t<20; t+=.05) {
-			float cx = player_x + t*SDL_cos(angle);
-			float cy = player_y + t*SDL_sin(angle);
+static void			render(const t_wolf wolf, unsigned *pixels)
+{
+	register int	i;
+	register double	t;
+	double			cx;
+	double			cy;
+	double			angle;
+	unsigned 		column_h;
 
-			size_t pix_x = cx*rect_w;
-			size_t pix_y = cy*rect_h;
-			pixels[pix_x + pix_y*win_w] = 0xFFFFFF; // this draws the visibility cone
-
-			if (wolf.map[(int)cy][(int)cx] != CHAR_EMPTY)
+	i = -1;
+	while (++i < WIDTH)
+	{
+		angle = wolf.player.a - wolf.player.fov / 2 + wolf.player.fov * i / WIDTH;
+		t = -0.06;
+		while ((t += 0.06) < 20.0)
+		{
+			cx = wolf.player.x + t * SDL_cos(angle);
+			cy = wolf.player.y + t * SDL_sin(angle);
+			if (wolf.show_map)
+				set_pixel((int)(cx * wolf.map.rect_w),
+						  (int)(cy * wolf.map.rect_h), 0xFFFFFF, pixels);
+			if (wolf.map.map[(int)cy][(int)cx] != CHAR_EMPTY)
 			{
-				size_t column_height = win_h/(t*SDL_cos(angle-player_a));
-				draw_rectangle(win_w, win_h, win_w/2+i, win_h/2-column_height/2, 1, column_height, 0x4cd4ab, pixels);
-				break;
+				column_h = HEIGHT / (t * SDL_cos(angle - wolf.player.a));
+				draw_rectangle((t_rect){i, HEIGHT / 2 - column_h / 2, 1, column_h}, get_wall_color(wolf.map.map[(int)cy][(int)cx]), pixels);
+				break ;
 			}
 		}
 	}
-
+	if (wolf.show_map)
+		map_render(wolf.map, wolf.player, pixels);
 }
 
 int					main(int argc, char *argv[])
@@ -89,10 +110,10 @@ int					main(int argc, char *argv[])
 	while (sdl.running)
 	{
 		while (SDL_PollEvent(&e))
-			manage_event(e, &sdl);
+			manage_event(e, &sdl, &wolf);
 		manage_keys(&sdl, &wolf);
 		render_clear(sdl.pixels);
-		render(sdl.pixels, wolf);
+		render(wolf, sdl.pixels);
 		SDL_UpdateTexture(sdl.texture, NULL, sdl.pixels, WIDTH * 4);
 		SDL_RenderCopy(sdl.ren, sdl.texture, NULL, NULL);
 		SDL_RenderPresent(sdl.ren);
