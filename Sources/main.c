@@ -106,18 +106,18 @@ int					main(int argc, char *argv[])
 	t_wolf			wolf;
 
 	wolf_init(&wolf, argc, argv);
-	sdl_init(&sdl);
-	while (sdl.running)
-	{
-		while (SDL_PollEvent(&e))
-			manage_event(e, &sdl, &wolf);
-		manage_keys(&sdl, &wolf);
-		render_clear(sdl.pixels);
-		render(wolf, sdl.pixels);
-		SDL_UpdateTexture(sdl.texture, NULL, sdl.pixels, WIDTH * 4);
-		SDL_RenderCopy(sdl.ren, sdl.texture, NULL, NULL);
-		SDL_RenderPresent(sdl.ren);
-	}
-	sdl_quit(&sdl);
+//	sdl_init(&sdl);
+//	while (sdl.running)
+//	{
+//		while (SDL_PollEvent(&e))
+//			manage_event(e, &sdl, &wolf);
+//		manage_keys(&sdl, &wolf);
+//		render_clear(sdl.pixels);
+//		render(wolf, sdl.pixels);
+//		SDL_UpdateTexture(sdl.texture, NULL, sdl.pixels, WIDTH * 4);
+//		SDL_RenderCopy(sdl.ren, sdl.texture, NULL, NULL);
+//		SDL_RenderPresent(sdl.ren);
+//	}
+//	sdl_quit(&sdl);
 	exit(0);
 }
