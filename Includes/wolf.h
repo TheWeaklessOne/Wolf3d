@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 15:06:02 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/17 15:17:49 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/17 17:56:10 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@
 # define WIDTH_H		(WIDTH / 2)
 # define HEIGHT_H		(HEIGHT / 2)
 
+# define PITCH			(WIDTH * 4)
+
 # define BUFF_SIZE		20
 
 # define IS_E			0
@@ -58,7 +60,8 @@ enum					e_chars
 	CHAR_WALL_1 = '1',
 	CHAR_WALL_2 = '2',
 	CHAR_WALL_3 = '3',
-	CHAR_WALLS_N
+	CHAR_WALLS_END,
+	WALLS_N = CHAR_WALLS_END - CHAR_WALL_1
 };
 
 typedef struct			s_rect
@@ -93,6 +96,13 @@ typedef struct			s_wolf
 	unsigned			show_map;
 }						t_wolf;
 
+typedef struct			s_texture
+{
+	int					w;
+	int					h;
+	unsigned			*pixels;
+}						t_texture;
+
 typedef struct			s_sdl
 {
 	SDL_Window			*win;
@@ -103,6 +113,7 @@ typedef struct			s_sdl
 	void				(*do_key[SDL_NUM_SCANCODES])
 							(t_wolf *wolf, const int *keys);
 	int					keys[SDL_NUM_SCANCODES];
+	t_list				**walls;
 }						t_sdl;
 
 typedef struct			s_get_next_line
@@ -124,6 +135,7 @@ void					read_map(const char *path, t_map *map_s,
 char					**add_to_text(char **text, char *add);
 int						check_file(const char *file, unsigned check);
 
+void					walls_init(t_list **walls);
 void					render_clear(unsigned pixels[WIDTH * HEIGHT]);
 
 void					*ft_malloc(size_t size);

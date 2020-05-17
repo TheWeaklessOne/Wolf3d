@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/wstygg/CLionProjects/Wolf3d/Sources/main.c" "/home/wstygg/CLionProjects/Wolf3d/cmake-build-debug/CMakeFiles/Wolf3d.dir/Sources/main.c.o"
   "/home/wstygg/CLionProjects/Wolf3d/Sources/sdl.c" "/home/wstygg/CLionProjects/Wolf3d/cmake-build-debug/CMakeFiles/Wolf3d.dir/Sources/sdl.c.o"
   "/home/wstygg/CLionProjects/Wolf3d/Sources/sdl_init.c" "/home/wstygg/CLionProjects/Wolf3d/cmake-build-debug/CMakeFiles/Wolf3d.dir/Sources/sdl_init.c.o"
+  "/home/wstygg/CLionProjects/Wolf3d/Sources/walls_init.c" "/home/wstygg/CLionProjects/Wolf3d/cmake-build-debug/CMakeFiles/Wolf3d.dir/Sources/walls_init.c.o"
   "/home/wstygg/CLionProjects/Wolf3d/Sources/wolf_init.c" "/home/wstygg/CLionProjects/Wolf3d/cmake-build-debug/CMakeFiles/Wolf3d.dir/Sources/wolf_init.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")

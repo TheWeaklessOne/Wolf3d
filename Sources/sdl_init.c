@@ -6,20 +6,11 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 15:26:01 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/17 15:17:49 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/17 17:55:31 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
-
-static void			keys_init(int keys[SDL_NUM_SCANCODES])
-{
-	register int	i;
-
-	i = -1;
-	while (++i < SDL_NUM_SCANCODES)
-		keys[i] = 0;
-}
 
 void				render_clear(unsigned pixels[WIDTH * HEIGHT])
 {
@@ -29,8 +20,16 @@ void				render_clear(unsigned pixels[WIDTH * HEIGHT])
 	h = -1;
 	while (++h < HEIGHT && (w = -1))
 		while (++w < WIDTH)
-			pixels[w + h * WIDTH] = (h < HEIGHT_H)
-					? ROOF_COLOR : FLOOR_COLOR;
+			pixels[w + h * WIDTH] = (h < HEIGHT_H) ? ROOF_COLOR : FLOOR_COLOR;
+}
+
+static void			keys_init(int keys[SDL_NUM_SCANCODES])
+{
+	register int	i;
+
+	i = -1;
+	while (++i < SDL_NUM_SCANCODES)
+		keys[i] = 0;
 }
 
 static void			functions_init(t_sdl *sdl)
@@ -62,6 +61,8 @@ void				sdl_init(t_sdl *sdl)
 			SDL_GetWindowPixelFormat(sdl->win),
 			SDL_TEXTUREACCESS_STREAMING, WIDTH, HEIGHT)))
 		return (ft_crash(SDL_GetError()));
+	sdl->walls = ft_malloc(sizeof(t_list*) * WALLS_N + 1);
+	walls_init(sdl->walls);
 	keys_init(sdl->keys);
 	functions_init(sdl);
 	sdl->running = 1;

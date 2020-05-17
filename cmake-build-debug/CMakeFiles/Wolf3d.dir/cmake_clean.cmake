@@ -11,6 +11,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Wolf3d.dir/Sources/main.c.o"
   "CMakeFiles/Wolf3d.dir/Sources/sdl.c.o"
   "CMakeFiles/Wolf3d.dir/Sources/sdl_init.c.o"
+  "CMakeFiles/Wolf3d.dir/Sources/walls_init.c.o"
   "CMakeFiles/Wolf3d.dir/Sources/wolf_init.c.o"
   "Wolf3d"
   "Wolf3d.pdb"

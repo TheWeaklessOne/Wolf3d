@@ -21,7 +21,7 @@ void				move_forward(t_wolf *wolf, const int *keys)
 	const char		c = wolf->map.map[(int)(wolf->player.y + new_y)]
 									[(int)(wolf->player.x + new_x)];
 
-	if (c < CHAR_WALL_1 || c >= CHAR_WALLS_N)
+	if (c < CHAR_WALL_1 || c >= CHAR_WALLS_END)
 	{
 		wolf->player.x += new_x;
 		wolf->player.y += new_y;
@@ -37,7 +37,7 @@ void				move_backward(t_wolf *wolf, const int *keys)
 	const char		c = wolf->map.map[(int)(wolf->player.y - new_y)]
 	[(int)(wolf->player.x - new_x)];
 
-	if (c < CHAR_WALL_1 || c >= CHAR_WALLS_N)
+	if (c < CHAR_WALL_1 || c >= CHAR_WALLS_END)
 	{
 		wolf->player.x -= new_x;
 		wolf->player.y -= new_y;

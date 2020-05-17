@@ -122,6 +122,9 @@
 		<Unit filename="/home/wstygg/CLionProjects/Wolf3d/Sources/sdl_init.c">
 			<Option target="Wolf3d"/>
 		</Unit>
+		<Unit filename="/home/wstygg/CLionProjects/Wolf3d/Sources/walls_init.c">
+			<Option target="Wolf3d"/>
+		</Unit>
 		<Unit filename="/home/wstygg/CLionProjects/Wolf3d/Sources/wolf_init.c">
 			<Option target="Wolf3d"/>
 		</Unit>

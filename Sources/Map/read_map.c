@@ -31,7 +31,7 @@ static int			open_map(const char *path)
 
 static int			is_wall(const char c)
 {
-	return (c >= CHAR_WALL_1 && c < CHAR_WALLS_N);
+	return (c >= CHAR_WALL_1 && c < CHAR_WALLS_END);
 }
 
 static void			check_line(char *line, const int h, t_player *player)
@@ -44,7 +44,7 @@ static void			check_line(char *line, const int h, t_player *player)
 	{
 		c = line[i];
 		if (c != CHAR_PLAYER && c != CHAR_EMPTY && c < CHAR_WALL_1 &&
-				c >= CHAR_WALLS_N)
+			c >= CHAR_WALLS_END)
 			ft_crash("Map error on [%d] line: unknown symbol!", h + 1);
 		if (c == CHAR_PLAYER)
 		{
