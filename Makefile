@@ -18,6 +18,7 @@ SRC_BASE	=	keys.c			\
 				sdl.c			\
 				sdl_init.c		\
 				wolf_init.c		\
+				walls_init.c	\
 				Utils/ft.c		\
 				Utils/ft_2.c	\
 				Utils/get_nl.c	\

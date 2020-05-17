@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 15:28:35 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/17 15:17:49 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/17 20:18:28 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,8 @@ void				manage_keys(t_sdl *sdl, t_wolf *wolf)
 
 void				sdl_quit(t_sdl *sdl)
 {
-	SDL_DestroyRenderer(sdl->ren);
 	SDL_DestroyWindow(sdl->win);
 	sdl->win = NULL;
-	sdl->ren = NULL;
 	IMG_Quit();
 	SDL_Quit();
 }

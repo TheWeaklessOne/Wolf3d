@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 15:06:02 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/17 17:56:10 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/17 20:33:34 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,10 +106,9 @@ typedef struct			s_texture
 typedef struct			s_sdl
 {
 	SDL_Window			*win;
-	SDL_Renderer		*ren;
+	SDL_Surface			*surf;
 	int					running;
-	SDL_Texture			*texture;
-	unsigned			pixels[WIDTH * HEIGHT];
+	unsigned			*pixels;
 	void				(*do_key[SDL_NUM_SCANCODES])
 							(t_wolf *wolf, const int *keys);
 	int					keys[SDL_NUM_SCANCODES];
@@ -135,7 +134,7 @@ void					read_map(const char *path, t_map *map_s,
 char					**add_to_text(char **text, char *add);
 int						check_file(const char *file, unsigned check);
 
-void					walls_init(t_list **walls);
+void					walls_init(t_list **w, SDL_PixelFormat *fmt);
 void					render_clear(unsigned pixels[WIDTH * HEIGHT]);
 
 void					*ft_malloc(size_t size);

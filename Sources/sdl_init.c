@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 15:26:01 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/17 17:55:31 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/17 20:40:51 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,11 @@ void				sdl_init(t_sdl *sdl)
 	if (!(sdl->win = SDL_CreateWindow("Wolf3d", SDL_WINDOWPOS_CENTERED,
 			SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, SDL_WINDOW_SHOWN)))
 		return (ft_crash(SDL_GetError()));
-	if (!(sdl->ren = SDL_CreateRenderer(sdl->win, -1,
-			SDL_RENDERER_ACCELERATED)))
+	if (!(sdl->surf = SDL_GetWindowSurface(sdl->win)))
 		return (ft_crash(SDL_GetError()));
-	if (!(sdl->texture = SDL_CreateTexture(sdl->ren,
-			SDL_GetWindowPixelFormat(sdl->win),
-			SDL_TEXTUREACCESS_STREAMING, WIDTH, HEIGHT)))
-		return (ft_crash(SDL_GetError()));
+	sdl->pixels = sdl->surf->pixels;
 	sdl->walls = ft_malloc(sizeof(t_list*) * WALLS_N + 1);
-	walls_init(sdl->walls);
+	walls_init(sdl->walls, sdl->surf->format);
 	keys_init(sdl->keys);
 	functions_init(sdl);
 	sdl->running = 1;

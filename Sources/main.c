@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 15:05:44 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/17 18:04:21 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/17 20:43:46 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,8 @@ static void			render(const t_wolf wolf, t_sdl *sdl)
 	while (++i < WIDTH)
 	{
 		angle = wolf.player.a - wolf.player.fov / 2 + wolf.player.fov * i / WIDTH;
-		t = -0.06;
-		while ((t += 0.06) < 20.0)
+		t = -0.05;
+		while ((t += 0.05) < 20.0)
 		{
 			cx = wolf.player.x + t * SDL_cos(angle);
 			cy = wolf.player.y + t * SDL_sin(angle);
@@ -102,21 +102,6 @@ static void			render(const t_wolf wolf, t_sdl *sdl)
 		map_render(wolf.map, sdl->pixels);
 }
 
-static void			draw_wall(t_list *wall, unsigned *pixels)
-{
-	register int	w;
-	register int	h;
-	t_texture		tex;
-
-	h = -1;
-	tex = *(t_texture*)wall->content;
-	while (++h < tex.h && (w = -1))
-		while (++w < tex.w)
-		{
-			pixels[w + h * WIDTH] = tex.pixels[w + h * tex.h];
-		}
-}
-
 int					main(int argc, char *argv[])
 {
 	SDL_Event		e;
@@ -132,9 +117,7 @@ int					main(int argc, char *argv[])
 		manage_keys(&sdl, &wolf);
 		render_clear(sdl.pixels);
 		render(wolf, &sdl);
-		SDL_UpdateTexture(sdl.texture, NULL, sdl.pixels, PITCH);
-		SDL_RenderCopy(sdl.ren, sdl.texture, NULL, NULL);
-		SDL_RenderPresent(sdl.ren);
+		SDL_UpdateWindowSurface(sdl.win);
 	}
 	sdl_quit(&sdl);
 	exit(0);
