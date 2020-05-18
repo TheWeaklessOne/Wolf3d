@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 15:06:02 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/18 20:44:57 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/18 23:09:51 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,12 @@
 # define WIDTH			1920
 # define HEIGHT			1000
 
-# define WIDTH_H		(WIDTH / 2)
-# define HEIGHT_H		(HEIGHT / 2)
+# define WIDTH_H		960
+# define HEIGHT_H		500
 
 # define RAY_STEP_DEF	0.05
 # define RAY_DIST_DEF	20
+
 
 # define BUFF_SIZE		20
 
@@ -64,6 +65,13 @@ enum					e_chars
 	CHAR_WALLS_END,
 	WALLS_N = CHAR_WALLS_END - CHAR_WALL_1
 };
+
+typedef struct			s_timer
+{
+	Uint32				now;
+	Uint32				delta;
+	Uint32				last_step;
+}						t_timer;
 
 typedef struct			s_rect
 {

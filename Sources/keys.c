@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 16:11:46 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/18 21:24:14 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/18 22:50:25 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,19 @@ void			move_forward(t_wolf *wolf, const int *keys)
 {
 	double		new_x;
 	double		new_y;
+	double		min_dist;
 
+	min_dist = 0.2;
 	new_x = SDL_cos(wolf->player.a) * (keys[SDL_SCANCODE_LSHIFT] ? 0.15 : 0.1);
 	new_y = SDL_sin(wolf->player.a) * (keys[SDL_SCANCODE_LSHIFT] ? 0.15 : 0.1);
-	if (!is_wall(wolf->player.x + new_x, wolf->player.y, wolf->map.map))
+	if (new_x < 0)
+		min_dist *= -1;
+	if (!is_wall(wolf->player.x + new_x + min_dist, wolf->player.y, wolf->map.map))
 		wolf->player.x += new_x;
-	if (!is_wall(wolf->player.x, wolf->player.y + new_y, wolf->map.map))
+	min_dist = 0.2;
+	if (new_y < 0)
+		min_dist *= -1;
+	if (!is_wall(wolf->player.x, wolf->player.y + new_y + min_dist, wolf->map.map))
 		wolf->player.y += new_y;
 }
 
@@ -36,12 +43,19 @@ void			move_backward(t_wolf *wolf, const int *keys)
 {
 	double		new_x;
 	double		new_y;
+	double		min_dist;
 
+	min_dist = 0.2;
 	new_x = SDL_cos(wolf->player.a) * (keys[SDL_SCANCODE_LSHIFT] ? 0.15 : 0.1);
 	new_y = SDL_sin(wolf->player.a) * (keys[SDL_SCANCODE_LSHIFT] ? 0.15 : 0.1);
-	if (!is_wall(wolf->player.x - new_x, wolf->player.y, wolf->map.map))
+	if (new_x < 0)
+		min_dist *= -1;
+	if (!is_wall(wolf->player.x - new_x - min_dist, wolf->player.y, wolf->map.map))
 		wolf->player.x -= new_x;
-	if (!is_wall(wolf->player.x, wolf->player.y - new_y, wolf->map.map))
+	min_dist = 0.2;
+	if (new_y < 0)
+		min_dist *= -1;
+	if (!is_wall(wolf->player.x, wolf->player.y - new_y - min_dist, wolf->map.map))
 		wolf->player.y -= new_y;
 }
 
