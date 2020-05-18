@@ -6,11 +6,23 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 16:58:51 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/17 20:47:51 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/19 01:52:03 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
+
+static void			make_cycle_list(t_list *list)
+{
+	t_list			*start;
+	t_list			*lst;
+
+	lst = list;
+	start = list;
+	while (lst->next)
+		lst = lst->next;
+	lst->next = start;
+}
 
 static t_texture	*make_tex(const char *path, SDL_PixelFormat *fmt)
 {
@@ -36,5 +48,9 @@ void				walls_init(t_list **w, SDL_PixelFormat *fmt)
 {
 	w[0] = list_add_back(w[0], make_tex("Textures/wall_128.png", fmt));
 	w[1] = list_add_back(w[1], make_tex("Textures/rocks_128.png", fmt));
+	w[1] = list_add_back(w[1], make_tex("Textures/planks_256.png", fmt));
 	w[2] = list_add_back(w[2], make_tex("Textures/wood_128.png", fmt));
+	make_cycle_list(w[0]);
+	make_cycle_list(w[1]);
+	make_cycle_list(w[2]);
 }

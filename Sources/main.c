@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 15:05:44 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/19 00:40:42 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/19 00:41:55 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void			map_render(const t_map map, unsigned *pixels)
 		}
 }
 
-static void			render(const t_wolf wolf, unsigned *pixels)
+static void			render(t_wolf wolf, unsigned *pixels)
 {
 	register int	i;
 

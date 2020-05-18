@@ -6,14 +6,14 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 00:40:43 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/19 00:57:25 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/19 02:02:55 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
 
 static int			get_x_coord(const double x, const double y,
-								  const t_texture texture)
+									const t_texture texture)
 {
 	double			hit_x;
 	double			hit_y;
@@ -47,19 +47,29 @@ static unsigned		*get_column(const double x, const double y,
 	return (column);
 }
 
-void			render_walls(const int i, const unsigned column_h,
+static void			render_walls(const int i, const unsigned column_h,
 								unsigned *column, unsigned *pixels)
 {
 	register int	j;
 
 	j = -1;
 	while (++j < column_h)
-		set_pixel(i, j + HEIGHT_H - column_h/ 2, column[j], pixels);
+		set_pixel(i, j + HEIGHT_H - column_h / 2, column[j], pixels);
 	free(column);
 }
 
-void			cast_rays(const t_wolf wolf, const double angle,
-						  const int i, unsigned *pixels)
+t_texture			get_texture(const double x, const double y, t_wolf wolf)
+{
+	t_texture		texture;
+	t_list			*walls;
+
+	walls = wolf.walls[wolf.map.map[(int)y][(int)x] - CHAR_WALL_1];
+	texture = *(t_texture*)walls->content;
+	return (texture);
+}
+
+void				cast_rays(t_wolf wolf, const double angle,
+								const int i, unsigned *pixels)
 {
 	register double	t;
 	double			x;
@@ -74,11 +84,10 @@ void			cast_rays(const t_wolf wolf, const double angle,
 		y = wolf.player.y + t * SDL_sin(angle);
 		if (wolf.show_map)
 			set_pixel((int)(x * wolf.map.rect_w),
-					  (int)(y * wolf.map.rect_h), 0xFFFFFF, pixels);
+						(int)(y * wolf.map.rect_h), 0xFFFFFF, pixels);
 		if (wolf.map.map[(int)y][(int)x] == CHAR_EMPTY)
 			continue ;
-		render_walls(i, column_h, get_column(x, y, column_h, *(t_texture*)wolf.
-		walls[wolf.map.map[(int)y][(int)x] - CHAR_WALL_1]->content), pixels);
+		render_walls(i, column_h, get_column(x, y, column_h, get_texture(x, y, wolf)), pixels);
 		break ;
 	}
 }
