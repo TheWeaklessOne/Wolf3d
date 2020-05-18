@@ -5,7 +5,7 @@ CC		=	gcc
 
 uname_S		:= $(shell uname -s)
 
-FLAGS	=	-g3 -lSDL2 -lSDL2_image -Ofast
+FLAGS	=	-g3 -lSDL2 -lSDL2_image -Og
 
 DELTA		=	$$(echo "$$(tput cols)-47"|bc)
 
@@ -18,13 +18,14 @@ SRC_BASE	=	sdl.c			\
 				keys.c			\
 				keys_2.c		\
 				sdl_init.c		\
+				cast_rays.c		\
 				wolf_init.c		\
 				walls_init.c	\
 				Utils/ft.c		\
 				Utils/ft_2.c	\
-				Utils/get_nl.c	\
 				Utils/list.c	\
 				Utils/list_2.c	\
+				Utils/get_nl.c	\
 				Map/read_map.c		\
 				Map/check_file.c	\
 				Map/add_to_text.c	\

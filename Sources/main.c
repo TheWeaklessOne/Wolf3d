@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 15:05:44 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/18 23:09:10 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/19 00:40:42 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,27 +27,6 @@ static void			map_render(const t_map map, unsigned *pixels)
 				draw_rectangle((t_rect){rect_x, rect_y, map.rect_w, map.rect_h},
 						0x424242, pixels);
 		}
-}
-
-static void			cast_rays(const t_wolf wolf, const double angle, const int i, unsigned *pixels)
-{
-	register double	t;
-	double			x;
-	double			y;
-
-	t = -wolf.ray_step;
-	while ((t += wolf.ray_step) < wolf.ray_dist)
-	{
-		x = wolf.player.x + t * SDL_cos(angle);
-		y = wolf.player.y + t * SDL_sin(angle);
-		if (wolf.show_map)
-			set_pixel((int)(x * wolf.map.rect_w), (int)(y * wolf.map.rect_h), 0xFFFFFF, pixels);
-		if (wolf.map.map[(int)y][(int)x] == CHAR_EMPTY)
-			continue ;
-		unsigned column_h = HEIGHT / (t * SDL_cos(angle - wolf.player.a));
-		draw_rectangle((t_rect){i, HEIGHT / 2 - column_h / 2, 1, column_h}, 0x8AA477, pixels);
-		break ;
-	}
 }
 
 static void			render(const t_wolf wolf, unsigned *pixels)

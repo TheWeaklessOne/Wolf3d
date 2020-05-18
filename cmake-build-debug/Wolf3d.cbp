@@ -83,6 +83,9 @@
 		<Unit filename="/home/wstygg/CLionProjects/Wolf3d/Includes/list.h">
 			<Option target="Wolf3d"/>
 		</Unit>
+		<Unit filename="/home/wstygg/CLionProjects/Wolf3d/Includes/structures.h">
+			<Option target="Wolf3d"/>
+		</Unit>
 		<Unit filename="/home/wstygg/CLionProjects/Wolf3d/Includes/wolf.h">
 			<Option target="Wolf3d"/>
 		</Unit>
@@ -108,6 +111,9 @@
 			<Option target="Wolf3d"/>
 		</Unit>
 		<Unit filename="/home/wstygg/CLionProjects/Wolf3d/Sources/Utils/list_2.c">
+			<Option target="Wolf3d"/>
+		</Unit>
+		<Unit filename="/home/wstygg/CLionProjects/Wolf3d/Sources/cast_rays.c">
 			<Option target="Wolf3d"/>
 		</Unit>
 		<Unit filename="/home/wstygg/CLionProjects/Wolf3d/Sources/keys.c">

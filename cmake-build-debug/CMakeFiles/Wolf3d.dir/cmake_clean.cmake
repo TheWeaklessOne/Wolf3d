@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Wolf3d.dir/Sources/Utils/get_nl.c.o"
   "CMakeFiles/Wolf3d.dir/Sources/Utils/list.c.o"
   "CMakeFiles/Wolf3d.dir/Sources/Utils/list_2.c.o"
+  "CMakeFiles/Wolf3d.dir/Sources/cast_rays.c.o"
   "CMakeFiles/Wolf3d.dir/Sources/keys.c.o"
   "CMakeFiles/Wolf3d.dir/Sources/keys_2.c.o"
   "CMakeFiles/Wolf3d.dir/Sources/main.c.o"

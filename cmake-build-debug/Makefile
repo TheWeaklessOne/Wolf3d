@@ -339,6 +339,33 @@ Sources/Utils/list_2.c.s:
 	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/Utils/list_2.c.s
 .PHONY : Sources/Utils/list_2.c.s
 
+Sources/cast_rays.o: Sources/cast_rays.c.o
+
+.PHONY : Sources/cast_rays.o
+
+# target to build an object file
+Sources/cast_rays.c.o:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/cast_rays.c.o
+.PHONY : Sources/cast_rays.c.o
+
+Sources/cast_rays.i: Sources/cast_rays.c.i
+
+.PHONY : Sources/cast_rays.i
+
+# target to preprocess a source file
+Sources/cast_rays.c.i:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/cast_rays.c.i
+.PHONY : Sources/cast_rays.c.i
+
+Sources/cast_rays.s: Sources/cast_rays.c.s
+
+.PHONY : Sources/cast_rays.s
+
+# target to generate assembly for a file
+Sources/cast_rays.c.s:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/cast_rays.c.s
+.PHONY : Sources/cast_rays.c.s
+
 Sources/keys.o: Sources/keys.c.o
 
 .PHONY : Sources/keys.o
@@ -561,6 +588,9 @@ help:
 	@echo "... Sources/Utils/list_2.o"
 	@echo "... Sources/Utils/list_2.i"
 	@echo "... Sources/Utils/list_2.s"
+	@echo "... Sources/cast_rays.o"
+	@echo "... Sources/cast_rays.i"
+	@echo "... Sources/cast_rays.s"
 	@echo "... Sources/keys.o"
 	@echo "... Sources/keys.i"
 	@echo "... Sources/keys.s"
