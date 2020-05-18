@@ -12,7 +12,33 @@
 
 #include "wolf.h"
 
-void				manage_event(SDL_Event e, t_sdl *sdl, t_wolf *wolf)
+void				draw_rectangle(const t_rect rect,
+							   const unsigned color, unsigned  *pixels)
+{
+	register int	i;
+	register int	j;
+	unsigned		cx;
+	unsigned		cy;
+
+	j = -1;
+	while (++j < rect.h && (i = -1))
+		while (++i < rect.w)
+		{
+			cx = rect.x + i;
+			cy = rect.y + j;
+			if (cx < WIDTH && cy < HEIGHT)
+				pixels[cx + cy * WIDTH] = color;
+		}
+}
+
+void				set_pixel(const unsigned x, const unsigned y,
+						  const unsigned color, unsigned *pixels)
+{
+	if (x < WIDTH && y < HEIGHT)
+		pixels[x + y * WIDTH] = color;
+}
+
+void				manage_event(const SDL_Event e, t_sdl *sdl, t_wolf *wolf)
 {
 	if (e.type == SDL_QUIT)
 		sdl->running = 0;

@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 15:06:02 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/17 20:33:34 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/18 20:44:57 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@
 # define WIDTH_H		(WIDTH / 2)
 # define HEIGHT_H		(HEIGHT / 2)
 
-# define PITCH			(WIDTH * 4)
+# define RAY_STEP_DEF	0.05
+# define RAY_DIST_DEF	20
 
 # define BUFF_SIZE		20
 
@@ -93,7 +94,11 @@ typedef struct			s_wolf
 {
 	t_map				map;
 	t_player			player;
+	t_list				**walls;
+	unsigned			*pixels;
 	unsigned			show_map;
+	unsigned			ray_dist;
+	double				ray_step;
 }						t_wolf;
 
 typedef struct			s_texture
@@ -108,11 +113,9 @@ typedef struct			s_sdl
 	SDL_Window			*win;
 	SDL_Surface			*surf;
 	int					running;
-	unsigned			*pixels;
 	void				(*do_key[SDL_NUM_SCANCODES])
 							(t_wolf *wolf, const int *keys);
 	int					keys[SDL_NUM_SCANCODES];
-	t_list				**walls;
 }						t_sdl;
 
 typedef struct			s_get_next_line
@@ -144,14 +147,20 @@ int						ft_char_count(const char *str, char c);
 void					*ft_memchr(const void *s, int c, size_t n);
 void					*ft_memcpy(void *dst, const void *src, size_t n);
 
-void					move_forward(t_wolf *wolf, const int *keys);
-void					move_backward(t_wolf *wolf, const int *keys);
+void					add_dist(t_wolf *wolf, const int *keys);
+void					sub_dist(t_wolf *wolf, const int *keys);
 void					angle_left(t_wolf *wolf, const int *keys);
 void					angle_right(t_wolf *wolf, const int *keys);
+void					move_forward(t_wolf *wolf, const int *keys);
+void					move_backward(t_wolf *wolf, const int *keys);
 
-void					sdl_init(t_sdl *sdl);
 void					sdl_quit(t_sdl *sdl);
+void					sdl_init(t_sdl *sdl, t_wolf *wolf);
 void					manage_keys(t_sdl *sdl, t_wolf *wolf);
 void					manage_event(SDL_Event e, t_sdl *sdl, t_wolf *wolf);
+void					draw_rectangle(t_rect rect, unsigned color,
+										unsigned  *pixels);
+void					set_pixel(unsigned x, unsigned y, unsigned color,
+									unsigned *pixels);
 
 #endif

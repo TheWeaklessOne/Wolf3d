@@ -366,6 +366,33 @@ Sources/keys.c.s:
 	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/keys.c.s
 .PHONY : Sources/keys.c.s
 
+Sources/keys_2.o: Sources/keys_2.c.o
+
+.PHONY : Sources/keys_2.o
+
+# target to build an object file
+Sources/keys_2.c.o:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/keys_2.c.o
+.PHONY : Sources/keys_2.c.o
+
+Sources/keys_2.i: Sources/keys_2.c.i
+
+.PHONY : Sources/keys_2.i
+
+# target to preprocess a source file
+Sources/keys_2.c.i:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/keys_2.c.i
+.PHONY : Sources/keys_2.c.i
+
+Sources/keys_2.s: Sources/keys_2.c.s
+
+.PHONY : Sources/keys_2.s
+
+# target to generate assembly for a file
+Sources/keys_2.c.s:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/keys_2.c.s
+.PHONY : Sources/keys_2.c.s
+
 Sources/main.o: Sources/main.c.o
 
 .PHONY : Sources/main.o
@@ -537,6 +564,9 @@ help:
 	@echo "... Sources/keys.o"
 	@echo "... Sources/keys.i"
 	@echo "... Sources/keys.s"
+	@echo "... Sources/keys_2.o"
+	@echo "... Sources/keys_2.i"
+	@echo "... Sources/keys_2.s"
 	@echo "... Sources/main.o"
 	@echo "... Sources/main.i"
 	@echo "... Sources/main.s"

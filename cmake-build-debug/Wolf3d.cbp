@@ -113,6 +113,9 @@
 		<Unit filename="/home/wstygg/CLionProjects/Wolf3d/Sources/keys.c">
 			<Option target="Wolf3d"/>
 		</Unit>
+		<Unit filename="/home/wstygg/CLionProjects/Wolf3d/Sources/keys_2.c">
+			<Option target="Wolf3d"/>
+		</Unit>
 		<Unit filename="/home/wstygg/CLionProjects/Wolf3d/Sources/main.c">
 			<Option target="Wolf3d"/>
 		</Unit>

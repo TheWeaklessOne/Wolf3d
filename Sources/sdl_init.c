@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 15:26:01 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/17 20:40:51 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/18 20:33:27 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,11 @@ static void			functions_init(t_sdl *sdl)
 	sdl->do_key[SDL_SCANCODE_S] = move_backward;
 	sdl->do_key[SDL_SCANCODE_A] = angle_left;
 	sdl->do_key[SDL_SCANCODE_D] = angle_right;
+	sdl->do_key[SDL_SCANCODE_KP_PLUS] = add_dist;
+	sdl->do_key[SDL_SCANCODE_KP_MINUS] = sub_dist;
 }
 
-void				sdl_init(t_sdl *sdl)
+void				sdl_init(t_sdl *sdl, t_wolf *wolf)
 {
 	if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
 		return (ft_crash(SDL_GetError()));
@@ -56,9 +58,9 @@ void				sdl_init(t_sdl *sdl)
 		return (ft_crash(SDL_GetError()));
 	if (!(sdl->surf = SDL_GetWindowSurface(sdl->win)))
 		return (ft_crash(SDL_GetError()));
-	sdl->pixels = sdl->surf->pixels;
-	sdl->walls = ft_malloc(sizeof(t_list*) * WALLS_N + 1);
-	walls_init(sdl->walls, sdl->surf->format);
+	wolf->pixels = sdl->surf->pixels;
+	wolf->walls = ft_malloc(sizeof(t_list*) * WALLS_N + 1);
+	walls_init(wolf->walls, sdl->surf->format);
 	keys_init(sdl->keys);
 	functions_init(sdl);
 	sdl->running = 1;

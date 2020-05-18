@@ -35,6 +35,10 @@ CMakeFiles/Wolf3d.dir/Sources/keys.c.o: ../Includes/list.h
 CMakeFiles/Wolf3d.dir/Sources/keys.c.o: ../Includes/wolf.h
 CMakeFiles/Wolf3d.dir/Sources/keys.c.o: ../Sources/keys.c
 
+CMakeFiles/Wolf3d.dir/Sources/keys_2.c.o: ../Includes/list.h
+CMakeFiles/Wolf3d.dir/Sources/keys_2.c.o: ../Includes/wolf.h
+CMakeFiles/Wolf3d.dir/Sources/keys_2.c.o: ../Sources/keys_2.c
+
 CMakeFiles/Wolf3d.dir/Sources/main.c.o: ../Includes/list.h
 CMakeFiles/Wolf3d.dir/Sources/main.c.o: ../Includes/wolf.h
 CMakeFiles/Wolf3d.dir/Sources/main.c.o: ../Sources/main.c

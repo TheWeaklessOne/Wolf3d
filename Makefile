@@ -13,9 +13,10 @@ SRC_DIR		=	Sources/
 INC_DIR		=	Includes/
 OBJ_DIR		=	.objs/
 
-SRC_BASE	=	keys.c			\
+SRC_BASE	=	sdl.c			\
 				main.c			\
-				sdl.c			\
+				keys.c			\
+				keys_2.c		\
 				sdl_init.c		\
 				wolf_init.c		\
 				walls_init.c	\
@@ -24,9 +25,9 @@ SRC_BASE	=	keys.c			\
 				Utils/get_nl.c	\
 				Utils/list.c	\
 				Utils/list_2.c	\
-				Map/add_to_text.c	\
-				Map/check_file.c	\
 				Map/read_map.c		\
+				Map/check_file.c	\
+				Map/add_to_text.c	\
 
 SRCS		=	$(addprefix $(SRC_DIR), $(SRC_BASE))
 OBJS		=	$(addprefix $(OBJ_DIR), $(SRC_BASE:.c=.o))
