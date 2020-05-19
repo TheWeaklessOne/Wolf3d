@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 15:26:01 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/18 20:33:27 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/19 14:52:34 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ static void			functions_init(t_sdl *sdl)
 
 void				sdl_init(t_sdl *sdl, t_wolf *wolf)
 {
+	sdl->running = 1;
+	functions_init(sdl);
+	keys_init(sdl->keys);
 	if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
 		return (ft_crash(SDL_GetError()));
 	if (!(IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG))
@@ -59,9 +62,5 @@ void				sdl_init(t_sdl *sdl, t_wolf *wolf)
 	if (!(sdl->surf = SDL_GetWindowSurface(sdl->win)))
 		return (ft_crash(SDL_GetError()));
 	wolf->pixels = sdl->surf->pixels;
-	wolf->walls = ft_malloc(sizeof(t_list*) * WALLS_N + 1);
-	walls_init(wolf->walls, sdl->surf->format);
-	keys_init(sdl->keys);
-	functions_init(sdl);
-	sdl->running = 1;
+	walls_init(wolf->walls, sdl->surf->format, wolf->map);
 }

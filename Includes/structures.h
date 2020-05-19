@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 00:43:48 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/19 01:09:29 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/19 15:03:36 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@
 # define FLOOR_COLOR	0x83918e
 # define ROOF_COLOR		0xb4e3f0
 
+# define MAX_FPS		60
+
 enum					e_chars
 {
 	CHAR_PLAYER = '0',
@@ -51,8 +53,8 @@ enum					e_chars
 typedef struct			s_timer
 {
 	Uint32				now;
-	Uint32				delta;
-	Uint32				last_step;
+	Uint32				start;
+	Uint32				difference;
 }						t_timer;
 
 typedef struct			s_rect
@@ -80,12 +82,19 @@ typedef struct			s_map
 	unsigned			rect_h;
 }						t_map;
 
+typedef struct			s_wall
+{
+	double				fps;
+	unsigned			frames;
+	t_list				*textures;
+}						t_wall;
+
 typedef struct			s_wolf
 {
 	t_map				map;
 	t_player			player;
-	t_list				**walls;
 	unsigned			*pixels;
+	t_wall				walls[WALLS_N];
 	unsigned			show_map;
 	unsigned			ray_dist;
 	double				ray_step;
