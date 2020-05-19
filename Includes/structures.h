@@ -46,6 +46,10 @@ enum					e_chars
 	CHAR_WALL_1 = '1',
 	CHAR_WALL_2 = '2',
 	CHAR_WALL_3 = '3',
+	CHAR_WALL_4 = '4',
+	CHAR_WALL_5 = '5',
+	CHAR_WALL_6 = '6',
+	CHAR_WALL_7 = '7',
 	CHAR_WALLS_END,
 	WALLS_N = CHAR_WALLS_END - CHAR_WALL_1
 };

@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 17:20:17 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/17 20:18:28 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/19 15:34:45 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static void			check_line(char *line, const int h, t_player *player)
 	}
 }
 
-static void			check_map(char **map, t_map *map_s, t_player *player)
+static void			check_map(char **map, t_player *player)
 {
 	register int	h;
 	register int	i;
@@ -104,7 +104,7 @@ void				read_map(const char *path, t_map *map_s, t_player *player)
 	}
 	if (!line || !*line)
 		ft_crash("Path [%s] is empty!", path);
-	check_map(map, map_s, player);
+	check_map(map, player);
 	map_s->map = map;
 	map_s->map_h = h;
 	map_s->rect_w = map_s->map_w;

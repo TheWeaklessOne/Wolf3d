@@ -56,6 +56,16 @@ char					*ft_itoa(int n)
 	return (str);
 }
 
+int						ft_strchr(const char *s, const char c)
+{
+	register int		i;
+
+	i = 0;
+	while (s[i] && s[i] != c)
+		i++;
+	return (s[i] == c);
+}
+
 char					*ft_strjoin(char const *s1, char const *s2, int to_free)
 {
 	char				*str;

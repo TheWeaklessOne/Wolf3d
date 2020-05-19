@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 15:06:02 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/19 14:44:26 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/19 15:09:37 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ char					*ft_itoa(int n);
 void					*ft_malloc(size_t size);
 int						ft_strlen(const char *str);
 int						get_nl(int fd, char **line);
+int						ft_strchr(const char *s, const char c);
 int						ft_char_count(const char *str, char c);
 void					*ft_memchr(const void *s, int c, size_t n);
 void					*ft_memcpy(void *dst, const void *src, size_t n);

@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 16:58:51 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/19 15:15:56 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/19 15:18:00 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,5 +111,13 @@ void				walls_init(t_wall *w, SDL_PixelFormat *fmt,
 		w[1].textures = list_add_back(w[1].textures, make_tex("Textures/wood_128.png", fmt));
 	if (check_for_symbol(CHAR_WALL_3, map))
 		w[2].textures = read_all_by_name("Textures/dance_1/flex", fmt);
+	if (check_for_symbol(CHAR_WALL_4, map))
+		w[3].textures = read_all_by_name("Textures/dance_1/flex", fmt);
+	if (check_for_symbol(CHAR_WALL_5, map))
+		w[4].textures = read_all_by_name("Textures/dance_1/flex", fmt);
+	if (check_for_symbol(CHAR_WALL_6, map))
+		w[5].textures = read_all_by_name("Textures/dance_1/flex", fmt);
+	if (check_for_symbol(CHAR_WALL_7, map))
+		w[6].textures = read_all_by_name("Textures/dance_1/flex", fmt);
 	make_cycle_lists(w);
 }
