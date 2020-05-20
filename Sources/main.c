@@ -6,13 +6,13 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 15:05:44 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/20 15:50:55 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/20 16:27:16 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
 
-static void			map_render(const t_map map, unsigned *pixels)
+void				map_render(const t_map map, unsigned *pixels)
 {
 	register int	i;
 	register int	j;

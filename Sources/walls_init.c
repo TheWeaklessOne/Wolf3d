@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 16:58:51 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/20 13:51:21 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/20 16:45:33 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ static t_list		*read_all_by_name(const char *path, SDL_PixelFormat *fmt)
 	while (++a)
 	{
 		str = ft_strjoin(ft_strjoin(ft_strjoin(path, "_", 0),
-				ft_itoa(a), 3), ".png", 1);
+							ft_itoa(a), 3), ".png", 1);
 		if (!str)
 			ft_crash("Malloc error");
 		if (check_file(str, IS_E) < 1)
@@ -119,18 +119,12 @@ static t_texture	**create_mega_texture(const char *path,
 void				walls_init(t_wall *w, SDL_PixelFormat *fmt,
 									const t_map map)
 {
-	register int	i;
-
-	i = -1;
-	while (++i < WALLS_N)
-	{
-		w->frames = 0;
-		w->textures = NULL;
-	}
-	check_for_symbol(CHAR_WALL_1, map) ? w[0].textures = list_add_back(
-			w[0].textures, make_tex("Textures/wall.png", fmt)) : 0;
-	check_for_symbol(CHAR_WALL_2, map) ? w[1].textures = list_add_back(
-			w[1].textures, make_tex("Textures/wood.png", fmt)) : 0;
+	if (check_for_symbol(CHAR_WALL_1, map))
+		w[0].textures = list_add_back(w[0].textures,
+				make_tex("Textures/wall.png", fmt));
+	if (check_for_symbol(CHAR_WALL_2, map))
+		w[1].textures = list_add_back(w[1].textures,
+				make_tex("Textures/wood.png", fmt));
 	if (check_for_symbol(CHAR_WALL_3, map))
 		w[2].textures = read_all_by_name("Textures/dance_1/flex", fmt);
 	if (check_for_symbol(CHAR_WALL_4, map))

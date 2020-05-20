@@ -44,7 +44,11 @@ list.h
 structures.h
 ../Includes/structures.h
 
-/home/wstygg/CLionProjects/Wolf3d/Sources/keys.c
+/home/wstygg/CLionProjects/Wolf3d/Sources/Map/read_map.c
+wolf.h
+/home/wstygg/CLionProjects/Wolf3d/Sources/Map/wolf.h
+
+/home/wstygg/CLionProjects/Wolf3d/Sources/walls_init.c
 wolf.h
 /home/wstygg/CLionProjects/Wolf3d/Sources/wolf.h
 

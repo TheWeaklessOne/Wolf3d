@@ -102,6 +102,7 @@ void				read_map(const char *path, t_map *map_s, t_player *player)
 			map_s->map_w = ft_strlen(line);
 		map = add_to_text(map, line);
 	}
+	close(fd);
 	if (!line || !*line)
 		ft_crash("Path [%s] is empty!", path);
 	check_map(map, player);

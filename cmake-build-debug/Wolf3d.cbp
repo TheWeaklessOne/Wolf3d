@@ -107,6 +107,9 @@
 		<Unit filename="/home/wstygg/CLionProjects/Wolf3d/Sources/Utils/ft_2.c">
 			<Option target="Wolf3d"/>
 		</Unit>
+		<Unit filename="/home/wstygg/CLionProjects/Wolf3d/Sources/Utils/ft_itoa.c">
+			<Option target="Wolf3d"/>
+		</Unit>
 		<Unit filename="/home/wstygg/CLionProjects/Wolf3d/Sources/Utils/get_nl.c">
 			<Option target="Wolf3d"/>
 		</Unit>

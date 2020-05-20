@@ -31,6 +31,11 @@ CMakeFiles/Wolf3d.dir/Sources/Utils/ft_2.c.o
  ../Includes/structures.h
  ../Includes/wolf.h
  /home/wstygg/CLionProjects/Wolf3d/Sources/Utils/ft_2.c
+CMakeFiles/Wolf3d.dir/Sources/Utils/ft_itoa.c.o
+ ../Includes/list.h
+ ../Includes/structures.h
+ ../Includes/wolf.h
+ /home/wstygg/CLionProjects/Wolf3d/Sources/Utils/ft_itoa.c
 CMakeFiles/Wolf3d.dir/Sources/Utils/get_nl.c.o
  ../Includes/list.h
  ../Includes/structures.h

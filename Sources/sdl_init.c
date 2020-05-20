@@ -62,5 +62,6 @@ void				sdl_init(t_sdl *sdl, t_wolf *wolf)
 	if (!(sdl->surf = SDL_GetWindowSurface(sdl->win)))
 		return (ft_crash(SDL_GetError()));
 	wolf->pixels = sdl->surf->pixels;
+	wolf->walls = ft_malloc(sizeof(t_wall) * WALLS_N);
 	walls_init(wolf->walls, sdl->surf->format, wolf->map);
 }

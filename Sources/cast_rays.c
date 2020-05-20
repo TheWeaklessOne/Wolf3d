@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 00:40:43 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/20 13:01:35 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/20 16:24:03 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,11 +82,13 @@ void				cast_rays(t_wolf *wolf, const double angle,
 	{
 		xy.x = wolf->player.x + t * SDL_cos(angle);
 		xy.y = wolf->player.y + t * SDL_sin(angle);
-		if (wolf->show_map)
-			set_pixel((int)(xy.x * wolf->map.rect_w),
-					  (int)(xy.y * wolf->map.rect_h), 0xFFFFFF, pixels);
 		if (wolf->map.map[(int)xy.y][(int)xy.x] == CHAR_EMPTY)
+		{
+			if (wolf->show_map)
+				set_pixel((int)(xy.x * wolf->map.rect_w),
+						  (int)(xy.y * wolf->map.rect_h), 0xFFFFFF, pixels);
 			continue ;
+		}
 		column_h = HEIGHT / (t * SDL_cos(angle - wolf->player.a));
 		texture = get_texture(xy, wolf, &x_coord);
 		render_walls(i, column_h, get_column(column_h, texture, x_coord), pixels);

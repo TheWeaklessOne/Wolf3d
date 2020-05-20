@@ -285,6 +285,33 @@ Sources/Utils/ft_2.c.s:
 	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/Utils/ft_2.c.s
 .PHONY : Sources/Utils/ft_2.c.s
 
+Sources/Utils/ft_itoa.o: Sources/Utils/ft_itoa.c.o
+
+.PHONY : Sources/Utils/ft_itoa.o
+
+# target to build an object file
+Sources/Utils/ft_itoa.c.o:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/Utils/ft_itoa.c.o
+.PHONY : Sources/Utils/ft_itoa.c.o
+
+Sources/Utils/ft_itoa.i: Sources/Utils/ft_itoa.c.i
+
+.PHONY : Sources/Utils/ft_itoa.i
+
+# target to preprocess a source file
+Sources/Utils/ft_itoa.c.i:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/Utils/ft_itoa.c.i
+.PHONY : Sources/Utils/ft_itoa.c.i
+
+Sources/Utils/ft_itoa.s: Sources/Utils/ft_itoa.c.s
+
+.PHONY : Sources/Utils/ft_itoa.s
+
+# target to generate assembly for a file
+Sources/Utils/ft_itoa.c.s:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/Utils/ft_itoa.c.s
+.PHONY : Sources/Utils/ft_itoa.c.s
+
 Sources/Utils/get_nl.o: Sources/Utils/get_nl.c.o
 
 .PHONY : Sources/Utils/get_nl.o
@@ -636,6 +663,9 @@ help:
 	@echo "... Sources/Utils/ft_2.o"
 	@echo "... Sources/Utils/ft_2.i"
 	@echo "... Sources/Utils/ft_2.s"
+	@echo "... Sources/Utils/ft_itoa.o"
+	@echo "... Sources/Utils/ft_itoa.i"
+	@echo "... Sources/Utils/ft_itoa.s"
 	@echo "... Sources/Utils/get_nl.o"
 	@echo "... Sources/Utils/get_nl.i"
 	@echo "... Sources/Utils/get_nl.s"

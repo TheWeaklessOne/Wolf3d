@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 00:43:48 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/20 15:50:55 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/20 16:37:22 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,14 @@
 
 # define FLOOR_COLOR	0x83918e
 # define ROOF_COLOR		0xb4e3f0
+
+# define ITOA_LOWER		0x0
+# define ITOA_UPPER		0x1
+# define ITOA_SIGNED	0x2
+# define ITOA_GROUPED	0x4
+# define ITOA_PLUS		0x8
+# define ITOA_NOT_ONE	0x10
+# define ITOA_ABC		"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 enum					e_chars
 {
@@ -105,9 +113,9 @@ typedef struct			s_wall
 typedef struct			s_wolf
 {
 	t_map				map;
+	t_wall				*walls;
 	t_player			player;
 	unsigned			*pixels;
-	t_wall				walls[WALLS_N];
 	unsigned			show_map;
 	unsigned			ray_dist;
 	double				ray_step;
@@ -141,5 +149,20 @@ typedef struct			s_get_next_line
 	ssize_t				count;
 	char				buffer[BUFF_SIZE];
 }						t_get_next_line;
+
+typedef struct			s_itoa
+{
+	char				*str;
+	char				*start;
+	char				*buffer;
+	uintmax_t			value;
+	uint_fast8_t		base;
+	uint_fast8_t		option;
+	uintmax_t			tmp;
+	uint_fast8_t		b_op;
+	uint_fast8_t		i;
+	uint_fast8_t		count;
+	char				*alphabet;
+}						t_itoa;
 
 #endif

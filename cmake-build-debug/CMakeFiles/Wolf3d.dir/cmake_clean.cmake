@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Wolf3d.dir/Sources/Map/read_map.c.o"
   "CMakeFiles/Wolf3d.dir/Sources/Utils/ft.c.o"
   "CMakeFiles/Wolf3d.dir/Sources/Utils/ft_2.c.o"
+  "CMakeFiles/Wolf3d.dir/Sources/Utils/ft_itoa.c.o"
   "CMakeFiles/Wolf3d.dir/Sources/Utils/get_nl.c.o"
   "CMakeFiles/Wolf3d.dir/Sources/Utils/list.c.o"
   "CMakeFiles/Wolf3d.dir/Sources/Utils/list_2.c.o"

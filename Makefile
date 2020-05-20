@@ -27,6 +27,7 @@ SRC_BASE	=	sdl.c					\
 				Utils/list.c			\
 				Utils/list_2.c			\
 				Utils/get_nl.c			\
+				Utils/ft_itoa.c			\
 				Map/read_map.c			\
 				Map/check_file.c		\
 				Map/add_to_text.c		\
