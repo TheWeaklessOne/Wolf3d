@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 15:26:01 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/19 16:20:36 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/20 15:59:32 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ static void			functions_init(t_sdl *sdl)
 	sdl->do_key[SDL_SCANCODE_S] = move_backward;
 	sdl->do_key[SDL_SCANCODE_A] = angle_left;
 	sdl->do_key[SDL_SCANCODE_D] = angle_right;
-	sdl->do_key[SDL_SCANCODE_KP_PLUS] = add_dist;
-	sdl->do_key[SDL_SCANCODE_KP_MINUS] = sub_dist;
+	sdl->do_key[SDL_SCANCODE_KP_PLUS] = add_dist_or_step;
+	sdl->do_key[SDL_SCANCODE_KP_MINUS] = sub_dist_or_step;
 }
 
 void				sdl_init(t_sdl *sdl, t_wolf *wolf)

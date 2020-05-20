@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 15:06:02 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/20 00:22:29 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/20 15:58:32 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <SDL2/SDL.h>
 # include <SDL2/SDL_image.h>
 
+# include <stdio.h>
 # include <fcntl.h>
 # include <float.h>
 # include <stdio.h>
@@ -30,10 +31,11 @@
 
 void					wolf_init(t_wolf *wolf, int argc, char *argv[]);
 
-void					read_map(const char *path, t_map *map_s,
-									t_player *player);
 char					**add_to_text(char **text, char *add);
 int						check_file(const char *file, unsigned check);
+int						check_for_symbol(const char c, const t_map map);
+void					read_map(const char *path, t_map *map_s,
+									t_player *player);
 
 void					walls_init(t_wall *walls, SDL_PixelFormat *fmt,
 									const t_map map);
@@ -52,14 +54,14 @@ void					*ft_memcpy(void *dst, const void *src, size_t n);
 char					*ft_strjoin(char const *s1, char const *s2,
 										int to_free);
 
-int						check_for_symbol(const char c, const t_map map);
+t_time					*time(void);
 
-void					add_dist(t_wolf *wolf, const int *keys);
-void					sub_dist(t_wolf *wolf, const int *keys);
 void					angle_left(t_wolf *wolf, const int *keys);
 void					angle_right(t_wolf *wolf, const int *keys);
 void					move_forward(t_wolf *wolf, const int *keys);
 void					move_backward(t_wolf *wolf, const int *keys);
+void					add_dist_or_step(t_wolf *wolf, const int *keys);
+void					sub_dist_or_step(t_wolf *wolf, const int *keys);
 
 void					sdl_quit(t_sdl *sdl);
 void					sdl_init(t_sdl *sdl, t_wolf *wolf);

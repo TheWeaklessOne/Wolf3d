@@ -72,6 +72,11 @@ CMakeFiles/Wolf3d.dir/Sources/sdl_init.c.o: ../Includes/structures.h
 CMakeFiles/Wolf3d.dir/Sources/sdl_init.c.o: ../Includes/wolf.h
 CMakeFiles/Wolf3d.dir/Sources/sdl_init.c.o: ../Sources/sdl_init.c
 
+CMakeFiles/Wolf3d.dir/Sources/time.c.o: ../Includes/list.h
+CMakeFiles/Wolf3d.dir/Sources/time.c.o: ../Includes/structures.h
+CMakeFiles/Wolf3d.dir/Sources/time.c.o: ../Includes/wolf.h
+CMakeFiles/Wolf3d.dir/Sources/time.c.o: ../Sources/time.c
+
 CMakeFiles/Wolf3d.dir/Sources/walls_init.c.o: ../Includes/list.h
 CMakeFiles/Wolf3d.dir/Sources/walls_init.c.o: ../Includes/structures.h
 CMakeFiles/Wolf3d.dir/Sources/walls_init.c.o: ../Includes/wolf.h

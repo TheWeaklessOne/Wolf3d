@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 00:43:48 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/20 13:43:24 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/20 15:50:55 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,14 @@
 # define WIDTH_H		400
 # define HEIGHT_H		400
 
-# define RAY_STEP_DEF	0.05
+# define RAY_STEP_DEF	0.01
 # define RAY_DIST_DEF	20
 
 # define BUFF_SIZE		20
+
+# define ANIM_TIME		100
+
+# define MIN_FRAME_TIME	16
 
 # define IS_E			0
 # define IS_R			1
@@ -52,17 +56,14 @@ enum					e_chars
 	WALLS_N = CHAR_WALLS_END - CHAR_WALL_1
 };
 
-typedef struct			s_timer
+typedef struct			s_time
 {
+	Uint32				step;
+	Uint32				delta;
 	Uint32				start;
-	Uint32				difference;
-}						t_timer;
-
-typedef struct			s_hits
-{
-	double				hit_x;
-	double				hit_y;
-}						t_hits;
+	long				value;
+	Uint32				since_frame;
+}						t_time;
 
 typedef struct			s_xy
 {
@@ -97,7 +98,6 @@ typedef struct			s_map
 
 typedef struct			s_wall
 {
-	double				fps;
 	unsigned			frames;
 	t_list				*textures;
 }						t_wall;

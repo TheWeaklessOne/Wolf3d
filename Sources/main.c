@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 15:05:44 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/19 16:20:36 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/20 15:50:55 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void			render(t_wolf *wolf, unsigned *pixels)
 		map_render(wolf->map, pixels);
 }
 
-static void			next_texture(t_wall *walls, const Uint32 difference)
+static int			next_texture(t_wall *walls)
 {
 	register int	i;
 	t_wall			wall;
@@ -55,9 +55,10 @@ static void			next_texture(t_wall *walls, const Uint32 difference)
 	while (++i < WALLS_N)
 	{
 		wall = walls[i];
-		if (wall.frames > 1 && difference >= wall.fps)
+		if (wall.frames > 1)
 			walls[i].textures = walls[i].textures->next;
 	}
+	return (1);
 }
 
 int					main(int argc, char *argv[])
@@ -65,24 +66,24 @@ int					main(int argc, char *argv[])
 	SDL_Event		e;
 	t_sdl			sdl;
 	t_wolf			wolf;
-	t_timer			fps;
 
 	wolf_init(&wolf, argc, argv);
 	sdl_init(&sdl, &wolf);
-	fps.difference = 0;
-	fps.start = SDL_GetTicks();
 	while (sdl.running)
 	{
-		fps.difference += SDL_GetTicks() - fps.start;
-		while (SDL_PollEvent(&e))
-			manage_event(e, &sdl, &wolf);
-		manage_keys(&sdl, &wolf);
+		time()->step = SDL_GetTicks();
 		render_clear(wolf.pixels);
 		render(&wolf, wolf.pixels);
 		SDL_UpdateWindowSurface(sdl.win);
-		next_texture(wolf.walls, fps.difference);
-		if (fps.difference >= 1000 && !(fps.difference = 0))
-			fps.start = SDL_GetTicks();
+		time()->delta = SDL_GetTicks() - time()->step;
+		time()->since_frame += time()->delta;
+		if (time()->since_frame >= ANIM_TIME && next_texture(wolf.walls))
+			time()->since_frame -= ANIM_TIME;
+		if (MIN_FRAME_TIME > time()->delta)
+			SDL_Delay(MIN_FRAME_TIME - time()->delta);
+		while (SDL_PollEvent(&e))
+			manage_event(e, &sdl, &wolf);
+		manage_keys(&sdl, &wolf);
 	}
 	sdl_quit(&sdl);
 	exit(0);

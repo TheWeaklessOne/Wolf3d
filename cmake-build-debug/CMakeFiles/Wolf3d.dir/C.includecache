@@ -21,6 +21,8 @@ SDL2/SDL.h
 -
 SDL2/SDL_image.h
 -
+stdio.h
+-
 fcntl.h
 -
 float.h
@@ -42,7 +44,7 @@ list.h
 structures.h
 ../Includes/structures.h
 
-/home/wstygg/CLionProjects/Wolf3d/Sources/walls_init.c
+/home/wstygg/CLionProjects/Wolf3d/Sources/keys.c
 wolf.h
 /home/wstygg/CLionProjects/Wolf3d/Sources/wolf.h
 

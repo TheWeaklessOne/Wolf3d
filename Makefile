@@ -15,6 +15,7 @@ OBJ_DIR		=	.objs/
 
 SRC_BASE	=	sdl.c					\
 				main.c					\
+				time.c					\
 				keys.c					\
 				keys_2.c				\
 				sdl_init.c				\

@@ -528,6 +528,33 @@ Sources/sdl_init.c.s:
 	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/sdl_init.c.s
 .PHONY : Sources/sdl_init.c.s
 
+Sources/time.o: Sources/time.c.o
+
+.PHONY : Sources/time.o
+
+# target to build an object file
+Sources/time.c.o:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/time.c.o
+.PHONY : Sources/time.c.o
+
+Sources/time.i: Sources/time.c.i
+
+.PHONY : Sources/time.i
+
+# target to preprocess a source file
+Sources/time.c.i:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/time.c.i
+.PHONY : Sources/time.c.i
+
+Sources/time.s: Sources/time.c.s
+
+.PHONY : Sources/time.s
+
+# target to generate assembly for a file
+Sources/time.c.s:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/time.c.s
+.PHONY : Sources/time.c.s
+
 Sources/walls_init.o: Sources/walls_init.c.o
 
 .PHONY : Sources/walls_init.o
@@ -636,6 +663,9 @@ help:
 	@echo "... Sources/sdl_init.o"
 	@echo "... Sources/sdl_init.i"
 	@echo "... Sources/sdl_init.s"
+	@echo "... Sources/time.o"
+	@echo "... Sources/time.i"
+	@echo "... Sources/time.s"
 	@echo "... Sources/walls_init.o"
 	@echo "... Sources/walls_init.i"
 	@echo "... Sources/walls_init.s"

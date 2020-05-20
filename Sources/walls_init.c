@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/17 16:58:51 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/20 12:04:16 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/20 13:51:21 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ static void			make_cycle_lists(t_wall *walls)
 			lst = lst->next;
 		}
 		walls[i].frames = len;
-		walls[i].fps = 1000.0 / ((len > 10) ? 10 : len);
 		lst->next = walls[i].textures;
 	}
 }

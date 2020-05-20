@@ -48,6 +48,8 @@ void				manage_event(const SDL_Event e, t_sdl *sdl, t_wolf *wolf)
 			sdl->running = 0;
 		else if (e.key.keysym.sym == SDLK_m)
 			wolf->show_map = !wolf->show_map;
+		else if (e.key.keysym.sym == SDLK_m)
+			wolf->show_map = !wolf->show_map;
 		if (!sdl->keys[e.key.keysym.scancode])
 			sdl->keys[e.key.keysym.scancode] = 1;
 	}
