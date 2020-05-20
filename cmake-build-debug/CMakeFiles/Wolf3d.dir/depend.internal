@@ -11,6 +11,11 @@ CMakeFiles/Wolf3d.dir/Sources/Map/check_file.c.o
  ../Includes/structures.h
  ../Includes/wolf.h
  /home/wstygg/CLionProjects/Wolf3d/Sources/Map/check_file.c
+CMakeFiles/Wolf3d.dir/Sources/Map/check_for_symbol.c.o
+ ../Includes/list.h
+ ../Includes/structures.h
+ ../Includes/wolf.h
+ /home/wstygg/CLionProjects/Wolf3d/Sources/Map/check_for_symbol.c
 CMakeFiles/Wolf3d.dir/Sources/Map/read_map.c.o
  ../Includes/list.h
  ../Includes/structures.h

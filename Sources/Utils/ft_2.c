@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 18:10:32 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/19 14:22:32 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/19 16:20:36 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,17 +56,16 @@ char					*ft_itoa(int n)
 	return (str);
 }
 
-int						ft_strchr(const char *s, const char c)
+int						ft_free_r(void *to_free)
 {
-	register int		i;
-
-	i = 0;
-	while (s[i] && s[i] != c)
-		i++;
-	return (s[i] == c);
+	if (!to_free)
+		return (1);
+	free(to_free);
+	return (0);
 }
 
-char					*ft_strjoin(char const *s1, char const *s2, int to_free)
+char					*ft_strjoin(char const *s1, char const *s2,
+										const int to_free)
 {
 	char				*str;
 	register size_t		i;

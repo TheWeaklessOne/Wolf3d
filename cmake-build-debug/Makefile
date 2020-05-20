@@ -177,6 +177,33 @@ Sources/Map/check_file.c.s:
 	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/Map/check_file.c.s
 .PHONY : Sources/Map/check_file.c.s
 
+Sources/Map/check_for_symbol.o: Sources/Map/check_for_symbol.c.o
+
+.PHONY : Sources/Map/check_for_symbol.o
+
+# target to build an object file
+Sources/Map/check_for_symbol.c.o:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/Map/check_for_symbol.c.o
+.PHONY : Sources/Map/check_for_symbol.c.o
+
+Sources/Map/check_for_symbol.i: Sources/Map/check_for_symbol.c.i
+
+.PHONY : Sources/Map/check_for_symbol.i
+
+# target to preprocess a source file
+Sources/Map/check_for_symbol.c.i:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/Map/check_for_symbol.c.i
+.PHONY : Sources/Map/check_for_symbol.c.i
+
+Sources/Map/check_for_symbol.s: Sources/Map/check_for_symbol.c.s
+
+.PHONY : Sources/Map/check_for_symbol.s
+
+# target to generate assembly for a file
+Sources/Map/check_for_symbol.c.s:
+	$(MAKE) -f CMakeFiles/Wolf3d.dir/build.make CMakeFiles/Wolf3d.dir/Sources/Map/check_for_symbol.c.s
+.PHONY : Sources/Map/check_for_symbol.c.s
+
 Sources/Map/read_map.o: Sources/Map/read_map.c.o
 
 .PHONY : Sources/Map/read_map.o
@@ -570,6 +597,9 @@ help:
 	@echo "... Sources/Map/check_file.o"
 	@echo "... Sources/Map/check_file.i"
 	@echo "... Sources/Map/check_file.s"
+	@echo "... Sources/Map/check_for_symbol.o"
+	@echo "... Sources/Map/check_for_symbol.i"
+	@echo "... Sources/Map/check_for_symbol.s"
 	@echo "... Sources/Map/read_map.o"
 	@echo "... Sources/Map/read_map.i"
 	@echo "... Sources/Map/read_map.s"

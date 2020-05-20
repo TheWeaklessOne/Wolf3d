@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 17:20:17 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/19 15:34:45 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/19 23:01:43 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,6 @@ void				read_map(const char *path, t_map *map_s, t_player *player)
 	check_map(map, player);
 	map_s->map = map;
 	map_s->map_h = h;
-	map_s->rect_w = map_s->map_w;
-	map_s->rect_h = map_s->map_h;
+	map_s->rect_w = WIDTH_H / map_s->map_w / 2 / (WIDTH / HEIGHT);
+	map_s->rect_h = HEIGHT_H / map_s->map_h / 2;
 }

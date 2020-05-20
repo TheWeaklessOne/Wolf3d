@@ -6,13 +6,13 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 17:23:34 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/18 22:22:39 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/20 13:20:59 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
 
-void					wolf_init(t_wolf *wolf, int argc, char *argv[])
+void					wolf_init(t_wolf *wolf, const int argc, char *argv[])
 {
 	if (argc != 2)
 		ft_crash("Using: ./wolf3d [Map]");
@@ -24,4 +24,6 @@ void					wolf_init(t_wolf *wolf, int argc, char *argv[])
 	wolf->ray_dist = RAY_DIST_DEF;
 	wolf->ray_step = RAY_STEP_DEF;
 	read_map(argv[1], &wolf->map, &wolf->player);
+	if (wolf->map.map_w != wolf->map.map_h)
+		ft_crash("Map - [%s], is have to be a square!", argv[1]);
 }

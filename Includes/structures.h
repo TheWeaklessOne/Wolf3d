@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 00:43:48 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/19 15:03:36 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/20 13:43:24 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 #include "wolf.h"
 
-# define WIDTH			1920
-# define HEIGHT			1000
+# define WIDTH			800
+# define HEIGHT			800
 
-# define WIDTH_H		960
-# define HEIGHT_H		500
+# define WIDTH_H		400
+# define HEIGHT_H		400
 
 # define RAY_STEP_DEF	0.05
 # define RAY_DIST_DEF	20
@@ -36,8 +36,6 @@
 
 # define FLOOR_COLOR	0x83918e
 # define ROOF_COLOR		0xb4e3f0
-
-# define MAX_FPS		60
 
 enum					e_chars
 {
@@ -56,10 +54,21 @@ enum					e_chars
 
 typedef struct			s_timer
 {
-	Uint32				now;
 	Uint32				start;
 	Uint32				difference;
 }						t_timer;
+
+typedef struct			s_hits
+{
+	double				hit_x;
+	double				hit_y;
+}						t_hits;
+
+typedef struct			s_xy
+{
+	double				x;
+	double				y;
+}						t_xy;
 
 typedef struct			s_rect
 {

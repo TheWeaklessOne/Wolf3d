@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Wolf3d.dir/Sources/Map/add_to_text.c.o"
   "CMakeFiles/Wolf3d.dir/Sources/Map/check_file.c.o"
+  "CMakeFiles/Wolf3d.dir/Sources/Map/check_for_symbol.c.o"
   "CMakeFiles/Wolf3d.dir/Sources/Map/read_map.c.o"
   "CMakeFiles/Wolf3d.dir/Sources/Utils/ft.c.o"
   "CMakeFiles/Wolf3d.dir/Sources/Utils/ft_2.c.o"

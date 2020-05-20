@@ -13,22 +13,23 @@ SRC_DIR		=	Sources/
 INC_DIR		=	Includes/
 OBJ_DIR		=	.objs/
 
-SRC_BASE	=	sdl.c			\
-				main.c			\
-				keys.c			\
-				keys_2.c		\
-				sdl_init.c		\
-				cast_rays.c		\
-				wolf_init.c		\
-				walls_init.c	\
-				Utils/ft.c		\
-				Utils/ft_2.c	\
-				Utils/list.c	\
-				Utils/list_2.c	\
-				Utils/get_nl.c	\
-				Map/read_map.c		\
-				Map/check_file.c	\
-				Map/add_to_text.c	\
+SRC_BASE	=	sdl.c					\
+				main.c					\
+				keys.c					\
+				keys_2.c				\
+				sdl_init.c				\
+				cast_rays.c				\
+				wolf_init.c				\
+				walls_init.c			\
+				Utils/ft.c				\
+				Utils/ft_2.c			\
+				Utils/list.c			\
+				Utils/list_2.c			\
+				Utils/get_nl.c			\
+				Map/read_map.c			\
+				Map/check_file.c		\
+				Map/add_to_text.c		\
+				Map/check_for_symbol.c	\
 
 SRCS		=	$(addprefix $(SRC_DIR), $(SRC_BASE))
 OBJS		=	$(addprefix $(OBJ_DIR), $(SRC_BASE:.c=.o))
@@ -73,5 +74,10 @@ re:		fclean all
 install:
 	@./install_frameworks.sh
 
+normal:
+	@./.normal_mode.sh
+
+4k:
+	@./.4k_mode.sh
 
 -include $(OBJS:.o=.d)
