@@ -16,20 +16,22 @@ void				map_render(const t_map map, unsigned *pixels)
 {
 	register int	i;
 	register int	j;
+	unsigned		rect_x;
+	unsigned		rect_y;
 
 	j = -1;
 	while (++j < map.map_h && (i = -1))
 		while (++i < map.map_h)
 		{
-			unsigned rect_x = i * map.rect_w;
-			unsigned rect_y = j * map.rect_h;
+			rect_x = i * map.rect_w;
+			rect_y = j * map.rect_h;
 			if (map.map[j][i] != CHAR_EMPTY)
 				draw_rectangle((t_rect){rect_x, rect_y, map.rect_w, map.rect_h},
 						0x424242, pixels);
 		}
 }
 
-int			render_thread(void *data)
+int					render_thread(void *data)
 {
 	register int	i;
 	const t_thread	thread = *(t_thread*)data;

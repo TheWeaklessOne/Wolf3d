@@ -50,7 +50,7 @@ static int		fn_while(t_get_next_line *gnl)
 }
 
 static int		fn_exit(t_get_next_line *gnl, const int fd, char **line,
-						  char **lp)
+							char **lp)
 {
 	gnl->interval++;
 	if (gnl->lp_cmp != 0 && (size_t)gnl->count > gnl->interval)

@@ -69,7 +69,7 @@ void					sdl_init(t_sdl *sdl, t_wolf *wolf);
 void					manage_keys(t_sdl *sdl, t_wolf *wolf);
 void					manage_event(SDL_Event e, t_sdl *sdl, t_wolf *wolf);
 void					draw_rectangle(t_rect rect, unsigned color,
-										unsigned  *pixels);
+										unsigned *pixels);
 void					set_pixel(unsigned x, unsigned y, unsigned color,
 									unsigned *pixels);
 

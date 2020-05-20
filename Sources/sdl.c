@@ -6,14 +6,14 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 15:28:35 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/19 16:20:35 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/20 19:26:01 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
 
 void				draw_rectangle(const t_rect rect,
-							   const unsigned color, unsigned  *pixels)
+									const unsigned color, unsigned *pixels)
 {
 	register int	i;
 	register int	j;
@@ -32,7 +32,7 @@ void				draw_rectangle(const t_rect rect,
 }
 
 void				set_pixel(const unsigned x, const unsigned y,
-						  const unsigned color, unsigned *pixels)
+								const unsigned color, unsigned *pixels)
 {
 	if (x < WIDTH && y < HEIGHT)
 		pixels[x + y * WIDTH] = color;

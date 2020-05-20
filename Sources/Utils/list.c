@@ -12,55 +12,25 @@
 
 #include "list.h"
 
-t_list			*list_remove_front(t_list *list, int to_free)
+t_list			*list_at(t_list *lst, int at)
 {
 	t_list		*ret;
+	int			i;
 
-	if (!list)
+	if (!lst)
 		return (NULL);
-	ret = list->next;
-	if (to_free)
-		free(list->content);
-	free(list);
-	return (ret);
-}
-
-t_list			*list_remove_back(t_list *list, int to_free)
-{
-	t_list		*to_del;
-	t_list		*ret;
-
-	if (!list)
-		return (NULL);
-	if (!list->next)
+	if (at <= 0)
+		return (lst);
+	ret = lst;
+	i = 1;
+	while (lst->next && i < at)
 	{
-		if (to_free)
-			free(list->content);
-		free(list);
-		return (NULL);
+		lst = lst->next;
+		i++;
 	}
-	ret = list;
-	while (list->next && list->next->next)
-		list = list->next;
-	to_del = list->next;
-	if (to_free)
-		free(to_del->content);
-	free(to_del);
-	list->next = NULL;
+	if (i == at)
+		return (lst);
 	return (ret);
-}
-
-t_list			*list_add_front(t_list *list, void *content)
-{
-	t_list		*item;
-
-	if (!list)
-		return (list_create(content));
-	if (!(item = malloc(sizeof(t_list))))
-		ft_crash("Malloc error");
-	item->content = content;
-	item->next = list;
-	return (item);
 }
 
 t_list			*list_add_back(t_list *list, void *content)

@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/05/20 19:09:33 by wstygg            #+#    #+#             */
+/*   Updated: 2020/05/20 19:09:33 by wstygg           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "wolf.h"
 
-static void	fn_reverse(char *start, char *end)
+static void		fn_reverse(char *start, char *end)
 {
-	char	tmp;
+	char		tmp;
 
 	end[1] = 0;
 	while (start + 1 <= end)
@@ -13,7 +25,7 @@ static void	fn_reverse(char *start, char *end)
 	}
 }
 
-static void	fn_write_int_str(t_itoa *itoa)
+static void		fn_write_int_str(t_itoa *itoa)
 {
 	while (itoa->value >= itoa->base)
 	{
@@ -42,7 +54,7 @@ static void	fn_write_int_str(t_itoa *itoa)
 	}
 }
 
-static void	fn_prev(t_itoa *itoa)
+static void		fn_prev(t_itoa *itoa)
 {
 	if ((itoa->option & ITOA_SIGNED) != 0)
 	{
@@ -93,7 +105,7 @@ static int		ft_itoa_base(char *buffer, uintmax_t value,
 	return (itoa.buffer + 1 - itoa.str);
 }
 
-char		*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	intmax_t	value;
 	char		*out;

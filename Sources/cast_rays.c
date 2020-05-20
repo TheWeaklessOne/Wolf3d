@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 00:40:43 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/20 16:24:03 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/20 19:21:19 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static unsigned		*get_column(const unsigned column_h,
 		ft_crash("Column malloc error!");
 	while (++i < column_h)
 		column[i] = texture.pixels[x_coord + (i * texture.h / column_h)
-							 			* texture.w];
+										* texture.w];
 	return (column);
 }
 
@@ -38,7 +38,7 @@ static void			render_walls(const int i, const unsigned column_h,
 	free(column);
 }
 
-t_texture			get_texture(const t_xy xy, t_wolf *wolf, int *x_coord)
+t_texture			get_texture(const t_xy xy, t_wolf *w, int *x_coord)
 {
 	int				side;
 	double			hit_x;
@@ -52,11 +52,9 @@ t_texture			get_texture(const t_xy xy, t_wolf *wolf, int *x_coord)
 		side = 0;
 	else if (SDL_fabs(hit_y) < 0.01 && hit_y > 0)
 		side = 1;
-	else if (SDL_fabs(hit_x) < 0.01 && hit_x < 0)
-		side = 2;
 	else
-		side = 3;
-	walls = wolf->walls[wolf->map.map[(int)xy.y][(int)xy.x] - CHAR_WALL_1].textures;
+		side = (SDL_fabs(hit_x) < 0.01 && hit_x < 0) ? 2 : 3;
+	walls = w->walls[w->map.map[(int)xy.y][(int)xy.x] - CHAR_WALL_1].textures;
 	texture = *((t_texture**)walls->content)[side];
 	if (SDL_fabs(hit_y) > SDL_fabs(hit_x))
 	{
@@ -69,7 +67,7 @@ t_texture			get_texture(const t_xy xy, t_wolf *wolf, int *x_coord)
 }
 
 void				cast_rays(t_wolf *wolf, const double angle,
-							  const int i, unsigned *pixels)
+								const int i, unsigned *pixels)
 {
 	register double	t;
 	t_xy			xy;
@@ -86,12 +84,13 @@ void				cast_rays(t_wolf *wolf, const double angle,
 		{
 			if (wolf->show_map)
 				set_pixel((int)(xy.x * wolf->map.rect_w),
-						  (int)(xy.y * wolf->map.rect_h), 0xFFFFFF, pixels);
+							(int)(xy.y * wolf->map.rect_h), 0xFFFFFF, pixels);
 			continue ;
 		}
 		column_h = HEIGHT / (t * SDL_cos(angle - wolf->player.a));
 		texture = get_texture(xy, wolf, &x_coord);
-		render_walls(i, column_h, get_column(column_h, texture, x_coord), pixels);
+		render_walls(i, column_h,
+						get_column(column_h, texture, x_coord), pixels);
 		break ;
 	}
 }

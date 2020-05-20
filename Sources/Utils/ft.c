@@ -53,10 +53,10 @@ int					ft_strlen(const char *str)
 	return (i);
 }
 
-void					*ft_malloc(const size_t size)
+void				*ft_malloc(const size_t size)
 {
-	char				*ret;
-	register size_t		i;
+	char			*ret;
+	register size_t	i;
 
 	if (!(ret = (char*)malloc(size)))
 		ft_crash("Malloc error");
@@ -66,9 +66,9 @@ void					*ft_malloc(const size_t size)
 	return ((void*)ret);
 }
 
-void					ft_crash(const char *msg, ...)
+void				ft_crash(const char *msg, ...)
 {
-	va_list				args;
+	va_list			args;
 
 	va_start(args, msg);
 	vfprintf(stderr, msg, args);

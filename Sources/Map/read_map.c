@@ -17,15 +17,15 @@ static int			open_map(const char *path)
 	int				ret;
 
 	if (!path)
-		ft_crash("Bad path provided!\n");
+		ft_crash("Bad path provided!");
 	if (check_file(path, IS_E) <= 0)
-		ft_crash("No such file - %s!\n", path);
+		ft_crash("No such file - %s!", path);
 	if ((ret = open(path, O_RDONLY)) < 0)
-		ft_crash("Can't open that file - %s!\n", path);
+		ft_crash("Can't open that file - %s!", path);
 	if (!check_file(path, IS_R))
-		ft_crash("Can't read from that file - %s!\n", path);
+		ft_crash("Can't read from that file - %s!", path);
 	if (check_file(path, IS_D))
-		ft_crash("It's a directory - %s!\n", path);
+		ft_crash("It's a directory - %s!", path);
 	return (ret);
 }
 

@@ -6,14 +6,14 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 00:43:48 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/20 19:01:35 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/20 19:13:20 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WOLF3D_STRUCTURES_H
 # define WOLF3D_STRUCTURES_H
 
-#include "wolf.h"
+# include "wolf.h"
 
 # define WIDTH			1280
 # define HEIGHT			720
@@ -21,7 +21,7 @@
 # define WIDTH_H		640
 # define HEIGHT_H		360
 
-# define RAY_STEP_DEF	0.005
+# define RAY_STEP_DEF	0.01
 # define RAY_DIST_DEF	20
 
 # define THREADS_N		16
