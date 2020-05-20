@@ -24,6 +24,7 @@ Open standart map ⇣
 ./Wolf3d map
 ```
 ![standart map](https://i.imgur.com/DX5ih2h.png)
+
 ## Keyboard shortcuts
 
 <table width="100%">
@@ -43,19 +44,19 @@ Open standart map ⇣
 <td valign="top" align="center"><kbd>&nbsp;ESC&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Move forward (faster with <kbd>&nbsp;shift&nbsp;</kbd></td>)
+<td valign="top" height="30px">Move forward (faster with <kbd>&nbsp;shift&nbsp;</kbd>)</td>
 <td valign="top" align="center"><kbd>&nbsp;▲&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Move backwards (faster with <kbd>&nbsp;shift&nbsp;</kbd></td>)</td>
+<td valign="top" height="30px">Move backwards (faster with <kbd>&nbsp;shift&nbsp;</kbd>)</td>
 <td valign="top" align="center"><kbd>&nbsp;▼&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Change view angle to the left (faster with <kbd>&nbsp;shift&nbsp;</kbd></td>)</td>
+<td valign="top" height="30px">Change view angle to the left (faster with <kbd>&nbsp;shift&nbsp;</kbd>)</td>
 <td valign="top" align="center"><kbd>&nbsp;◄&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Change view angle to the right (faster with <kbd>&nbsp;shift&nbsp;</kbd></td>)</td>
+<td valign="top" height="30px">Change view angle to the right (faster with <kbd>&nbsp;shift&nbsp;</kbd>)
 <td valign="top" align="center"><kbd>&nbsp;►&nbsp;</kbd></td>
 </tr>
 <tr>
@@ -68,11 +69,11 @@ Open standart map ⇣
 </tr>
 <tr>
 <td valign="top" height="30px">Increase ray accuracy</td>
-<td valign="top" align="center"><kbd>&nbsp;Shift<i>and</i> +&nbsp;</kdb></td>
+<td valign="top" align="center"><kbd>&nbsp;Shift <i>and</i> +&nbsp;</kdb></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Decrease Increase ray accuracy</td>
-<td valign="top" align="center"><kbd>&nbsp;Shift<i>and</i> -&nbsp;</kdb></td>
+<td valign="top" align="center"><kbd>&nbsp;Shift <i>and</i> -&nbsp;</kdb></td>
 </tr>
 </tbody>
 </table>
