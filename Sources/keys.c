@@ -70,7 +70,7 @@ void			move_backward(t_wolf *wolf, const int *keys)
 void			angle_left(t_wolf *wolf, const int *keys)
 {
 	wolf->player.a -= 0.025 * (keys[SDL_SCANCODE_LSHIFT]
-			? 0.12 : 0.075) * ft_time()->delta;
+			? 0.12 : 0.01) * ft_time()->delta;
 }
 
 void			angle_right(t_wolf *wolf, const int *keys)

@@ -15,11 +15,11 @@
 
 # include "wolf.h"
 
-# define WIDTH			1280
-# define HEIGHT			720
+# define WIDTH			1920
+# define HEIGHT			1000
 
-# define WIDTH_H		640
-# define HEIGHT_H		360
+# define WIDTH_H		960
+# define HEIGHT_H		500
 
 # define RAY_STEP_DEF	0.01
 # define RAY_DIST_DEF	20
