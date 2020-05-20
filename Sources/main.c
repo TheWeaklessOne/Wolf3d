@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 15:05:44 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/20 16:27:16 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/20 18:50:44 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,39 @@ void				map_render(const t_map map, unsigned *pixels)
 		}
 }
 
+int			render_thread(void *data)
+{
+	register int	i;
+	const t_thread	thread = *(t_thread*)data;
+	const int		min = WIDTH / THREADS_N * thread.thread_n;
+	const int		max = WIDTH / THREADS_N * (thread.thread_n + 1);
+
+	i = min - 1;
+	while (++i < max)
+		cast_rays(
+				thread.wolf,
+				thread.wolf->player.a - thread.wolf->player.fov / 2 +
+					thread.wolf->player.fov * i / WIDTH, i,
+				thread.pixels);
+}
+
 static void			render(t_wolf *wolf, unsigned *pixels)
 {
 	register int	i;
+	t_thread		thread[THREADS_N];
+	SDL_Thread		*threads[THREADS_N];
 
 	i = -1;
-	while (++i < WIDTH)
+	while (++i < THREADS_N)
 	{
-		cast_rays(
-		wolf,
-		wolf->player.a - wolf->player.fov / 2 + wolf->player.fov * i / WIDTH,
-		i,
-		pixels);
+		thread[i].wolf = wolf;
+		thread[i].pixels = pixels;
+		thread[i].thread_n = i;
+		if (!(threads[i] = SDL_CreateThread(render_thread, NULL, thread + i)))
+			ft_crash("Can't create a thread - [%d]!", i);
 	}
+	while (--i > -1)
+		SDL_WaitThread(threads[i], NULL);
 	if (wolf->show_map)
 		map_render(wolf->map, pixels);
 }
@@ -71,16 +91,16 @@ int					main(int argc, char *argv[])
 	sdl_init(&sdl, &wolf);
 	while (sdl.running)
 	{
-		time()->step = SDL_GetTicks();
+		ft_time()->step = SDL_GetTicks();
 		render_clear(wolf.pixels);
 		render(&wolf, wolf.pixels);
 		SDL_UpdateWindowSurface(sdl.win);
-		time()->delta = SDL_GetTicks() - time()->step;
-		time()->since_frame += time()->delta;
-		if (time()->since_frame >= ANIM_TIME && next_texture(wolf.walls))
-			time()->since_frame -= ANIM_TIME;
-		if (MIN_FRAME_TIME > time()->delta)
-			SDL_Delay(MIN_FRAME_TIME - time()->delta);
+		ft_time()->delta = SDL_GetTicks() - ft_time()->step;
+		ft_time()->since_frame += ft_time()->delta;
+		if (ft_time()->since_frame >= ANIM_TIME && next_texture(wolf.walls))
+			ft_time()->since_frame -= ANIM_TIME;
+		if (MIN_FRAME_TIME > ft_time()->delta)
+			SDL_Delay(MIN_FRAME_TIME - ft_time()->delta);
 		while (SDL_PollEvent(&e))
 			manage_event(e, &sdl, &wolf);
 		manage_keys(&sdl, &wolf);

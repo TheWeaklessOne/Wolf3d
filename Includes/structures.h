@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 00:43:48 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/20 16:37:22 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/20 19:01:35 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,33 @@
 
 #include "wolf.h"
 
-# define WIDTH			800
-# define HEIGHT			800
+# define WIDTH			1280
+# define HEIGHT			720
 
-# define WIDTH_H		400
-# define HEIGHT_H		400
+# define WIDTH_H		640
+# define HEIGHT_H		360
 
-# define RAY_STEP_DEF	0.01
+# define RAY_STEP_DEF	0.005
 # define RAY_DIST_DEF	20
 
-# define BUFF_SIZE		20
+# define THREADS_N		16
 
 # define ANIM_TIME		100
 
 # define MIN_FRAME_TIME	16
+
+# define WALL_ERROR		"there have to be walls around all the map!"
+
+# define FLOOR_COLOR	0x83918e
+# define ROOF_COLOR		0xb4e3f0
+
+# define BUFF_SIZE		20
 
 # define IS_E			0
 # define IS_R			1
 # define IS_W			2
 # define IS_X			4
 # define IS_D			8
-
-# define WALL_ERROR		"there have to be walls around all the map!"
-
-# define FLOOR_COLOR	0x83918e
-# define ROOF_COLOR		0xb4e3f0
 
 # define ITOA_LOWER		0x0
 # define ITOA_UPPER		0x1
@@ -68,8 +70,6 @@ typedef struct			s_time
 {
 	Uint32				step;
 	Uint32				delta;
-	Uint32				start;
-	long				value;
 	Uint32				since_frame;
 }						t_time;
 
@@ -120,6 +120,13 @@ typedef struct			s_wolf
 	unsigned			ray_dist;
 	double				ray_step;
 }						t_wolf;
+
+typedef struct			s_thread
+{
+	t_wolf				*wolf;
+	unsigned			*pixels;
+	unsigned			thread_n;
+}						t_thread;
 
 typedef struct			s_texture
 {

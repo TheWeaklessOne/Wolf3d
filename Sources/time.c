@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   time.c                                             :+:      :+:    :+:   */
+/*   ft_time.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,12 +12,7 @@
 
 #include "wolf.h"
 
-void				time_start(void)
-{
-	time()->start = SDL_GetTicks();
-}
-
-t_time				*time(void)
+t_time				*ft_time(void)
 {
 	static t_time	ret = (t_time){0};
 

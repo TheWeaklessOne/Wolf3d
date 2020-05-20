@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 15:06:02 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/20 15:58:32 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/20 17:09:02 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <SDL2/SDL.h>
 # include <SDL2/SDL_image.h>
+# include <SDL2/SDL_thread.h>
 
 # include <stdio.h>
 # include <fcntl.h>
@@ -54,7 +55,7 @@ void					*ft_memcpy(void *dst, const void *src, size_t n);
 char					*ft_strjoin(char const *s1, char const *s2,
 										int to_free);
 
-t_time					*time(void);
+t_time					*ft_time(void);
 
 void					angle_left(t_wolf *wolf, const int *keys);
 void					angle_right(t_wolf *wolf, const int *keys);
