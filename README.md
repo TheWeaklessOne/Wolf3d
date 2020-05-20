@@ -68,11 +68,11 @@ Open standart map ⇣
 </tr>
 <tr>
 <td valign="top" height="30px">Increase ray accuracy</td>
-<td valign="top" align="center"><kbd>&nbsp;Shift&nbsp;</kdb> and <kbd>&nbsp;+&nbsp;</kdb></td>
+<td valign="top" align="center"><kbd>&nbsp;Shift<i>and</i> +&nbsp;</kdb></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Decrease Increase ray accuracy</td>
-<td valign="top" align="center"><kbd>&nbsp;Shift&nbsp;</kdb> and <kbd>&nbsp;-&nbsp;</kdb></td>
+<td valign="top" align="center"><kbd>&nbsp;Shift<i>and</i> -&nbsp;</kdb></td>
 </tr>
 </tbody>
 </table>
