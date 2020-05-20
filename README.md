@@ -4,7 +4,7 @@ Multithread raycasting engine builded on SDL2
 
 ![](promo.gif)
 
-Several options are available (see [Keyboard shortcuts](https://github.com/TheWeaklessOne/Wolf3d#keyboard-shortcuts) or/and [Mouse controls](https://github.com/TheWeaklessOne/Wolf3d#mouse-controls) sections for more infos) :
+Several options are available (see [Keyboard shortcuts](https://github.com/TheWeaklessOne/Wolf3d#keyboard-shortcuts) sections for more infos) :
 * Walk forward/backward along the direction of view
 * Change the ray accuracy
 * Change the maximum ray range
