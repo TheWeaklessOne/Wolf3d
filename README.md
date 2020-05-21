@@ -56,8 +56,12 @@ Open standart map ⇣
 <td valign="top" align="center"><kbd>&nbsp;◄&nbsp;</kbd></td>
 </tr>
 <tr>
-<td valign="top" height="30px">Change view angle to the right (faster with <kbd>&nbsp;shift&nbsp;</kbd>)
+<td valign="top" height="30px">Change view angle to the right (faster with <kbd>&nbsp;shift&nbsp;</kbd>)</td>
 <td valign="top" align="center"><kbd>&nbsp;►&nbsp;</kbd></td>
+</tr>
+  <tr>
+<td valign="top" height="30px">Dark mode</td>
+<td valign="top" align="center"><kbd>&nbsp;space&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Increase maximum ray range</td>
@@ -81,3 +85,4 @@ Open standart map ⇣
 ## Screenshots
 ![another_angle](https://i.imgur.com/YUtLEm3.png)
 ![4k_textures](https://i.imgur.com/NbnOwRU.png)
+![dark_mode](https://i.imgur.com/XvSQY8I.png)
