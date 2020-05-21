@@ -21,8 +21,8 @@
 # define WIDTH_H		960
 # define HEIGHT_H		500
 
-# define RAY_STEP_DEF	0.01
-# define RAY_DIST_DEF	20
+# define RAY_STEP_DEF		0.01
+# define RAY_DIST_DEF		20
 
 # define THREADS_N		16
 

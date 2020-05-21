@@ -5,7 +5,7 @@ CC		=	gcc
 
 uname_S		:= $(shell uname -s)
 
-FLAGS	=	-g3 -lSDL2 -lSDL2_image -Og
+FLAGS		= -Ofast -m64 -march=native -lSDL2 -lSDL2_image -Wall -Wextra -Werror
 
 DELTA		=	$$(echo "$$(tput cols)-47"|bc)
 

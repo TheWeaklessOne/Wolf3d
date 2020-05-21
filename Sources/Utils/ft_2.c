@@ -33,7 +33,7 @@ int						ft_free_r(void *to_free)
 	if (!to_free)
 		return (1);
 	free(to_free);
-	return (0);
+	return (1);
 }
 
 char					*ft_strjoin(char const *s1, char const *s2,

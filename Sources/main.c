@@ -45,6 +45,7 @@ int					render_thread(void *data)
 				thread.wolf->player.a - thread.wolf->player.fov / 2 +
 					thread.wolf->player.fov * i / WIDTH, i,
 				thread.pixels);
+	return (0);
 }
 
 static void			render(t_wolf *wolf, unsigned *pixels)
