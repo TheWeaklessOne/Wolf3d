@@ -2,7 +2,7 @@
 
 Multithread raycasting engine builded on SDL2
 
-![](https://i.imgur.com/eDEO9i3.gif)
+![](promo.gif)
 
 Several options are available (see [Keyboard shortcuts](https://github.com/TheWeaklessOne/Wolf3d#keyboard-shortcuts) sections for more infos) :
 * Walk forward/backward along the direction of view
