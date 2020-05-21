@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 00:43:48 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/20 19:13:20 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/22 02:20:05 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # define WIDTH_H		960
 # define HEIGHT_H		500
 
-# define RAY_STEP_DEF		0.01
-# define RAY_DIST_DEF		20
+# define RAY_STEP_DEF	0.01
+# define RAY_DIST_DEF	20
 
 # define THREADS_N		16
 
@@ -34,6 +34,10 @@
 
 # define FLOOR_COLOR	0x83918e
 # define ROOF_COLOR		0xb4e3f0
+
+# define FOG_COLOR_R	0x0
+# define FOG_COLOR_G	0x0
+# define FOG_COLOR_B	0x0
 
 # define BUFF_SIZE		20
 
@@ -65,6 +69,18 @@ enum					e_chars
 	CHAR_WALLS_END,
 	WALLS_N = CHAR_WALLS_END - CHAR_WALL_1
 };
+
+typedef union			u_argb
+{
+	struct
+	{
+		Uint8			b;
+		Uint8			g;
+		Uint8			r;
+		Uint8			a;
+	}					parts;
+	Uint32				color;
+}						t_argb;
 
 typedef struct			s_time
 {
@@ -115,6 +131,8 @@ typedef struct			s_wolf
 	t_map				map;
 	t_wall				*walls;
 	t_player			player;
+	Uint32				roof_c;
+	Uint32				floor_c;
 	unsigned			*pixels;
 	unsigned			show_map;
 	unsigned			ray_dist;

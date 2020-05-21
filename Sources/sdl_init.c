@@ -12,7 +12,8 @@
 
 #include "wolf.h"
 
-void				render_clear(unsigned pixels[WIDTH * HEIGHT])
+void				render_clear(const Uint32 roof_c, const Uint32 floor_c,
+									unsigned pixels[WIDTH * HEIGHT])
 {
 	register int	h;
 	register int	w;
@@ -20,7 +21,7 @@ void				render_clear(unsigned pixels[WIDTH * HEIGHT])
 	h = -1;
 	while (++h < HEIGHT && (w = -1))
 		while (++w < WIDTH)
-			pixels[w + h * WIDTH] = (h < HEIGHT_H) ? ROOF_COLOR : FLOOR_COLOR;
+			pixels[w + h * WIDTH] = (h < HEIGHT_H) ? roof_c : floor_c;
 }
 
 static void			keys_init(int keys[SDL_NUM_SCANCODES])

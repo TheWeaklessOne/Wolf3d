@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 17:20:17 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/19 23:01:43 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/21 23:12:44 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ static void			check_line(char *line, const int h, t_player *player)
 	while (line[++i])
 	{
 		c = line[i];
-		if (c != CHAR_PLAYER && c != CHAR_EMPTY && c < CHAR_WALL_1 &&
-			c >= CHAR_WALLS_END)
-			ft_crash("Map error on [%d] line: unknown symbol!", h + 1);
+		if (!is_wall(c) && c != CHAR_PLAYER && c != CHAR_EMPTY)
+			ft_crash("Map error on [%d] line: unknown symbol - [%c]!",
+					h + 1, c);
 		if (c == CHAR_PLAYER)
 		{
 			player->x = i;
@@ -77,7 +77,7 @@ static void			check_map(char **map, t_player *player)
 	}
 	line = map[h];
 	i = -1;
-	while (line[++i])
+	while (line && line[++i])
 		if (!is_wall(line[i]))
 			ft_crash("Map error on [%d] line: "WALL_ERROR, h + 1);
 	if (player_n != 1)

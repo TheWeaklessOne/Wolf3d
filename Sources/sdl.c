@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 15:28:35 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/20 19:26:01 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/22 02:25:24 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,14 @@ void				manage_event(const SDL_Event e, t_sdl *sdl, t_wolf *wolf)
 			wolf->show_map = !wolf->show_map;
 		else if (e.key.keysym.sym == SDLK_m)
 			wolf->show_map = !wolf->show_map;
-		if (!sdl->keys[e.key.keysym.scancode])
+		else if(e.key.keysym.sym == SDLK_SPACE)
+		{
+			wolf->ray_dist = (wolf->ray_dist > 7) ? wolf->ray_dist = 7
+								: RAY_DIST_DEF;
+			wolf->roof_c = (wolf->roof_c) ? 0 : ROOF_COLOR;
+			wolf->floor_c = (wolf->floor_c) ? 0 : FLOOR_COLOR;
+		}
+		else if (!sdl->keys[e.key.keysym.scancode])
 			sdl->keys[e.key.keysym.scancode] = 1;
 	}
 	else if (e.type == SDL_KEYUP)

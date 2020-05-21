@@ -6,29 +6,39 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 00:40:43 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/20 19:21:19 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/22 02:23:31 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "wolf.h"
 
-static unsigned		*get_column(const unsigned column_h,
+static unsigned		*get_column(const unsigned column_h, double percent,
 								const t_texture texture, const int x_coord)
 {
 	register int	i;
+	t_argb			fog;
+	t_argb			normal;
 	unsigned		*column;
+	const double	t_percent = 1.0 - percent;
 
 	i = -1;
 	if (!(column = malloc(sizeof(unsigned) * column_h)))
 		ft_crash("Column malloc error!");
 	while (++i < column_h)
-		column[i] = texture.pixels[x_coord + (i * texture.h / column_h)
+	{
+		normal.color = texture.pixels[x_coord +(i * texture.h / column_h)
 										* texture.w];
+		fog.parts.a = 0;
+		fog.parts.r = normal.parts.r * t_percent + FOG_COLOR_R * percent;
+		fog.parts.g = normal.parts.g * t_percent + FOG_COLOR_G * percent;
+		fog.parts.b = normal.parts.b * t_percent + FOG_COLOR_B * percent;
+		column[i] = fog.color;
+	}
 	return (column);
 }
 
-static void			render_walls(const int i, const unsigned column_h,
-									unsigned *column, unsigned *pixels)
+static void			render_wall(const int i, const unsigned column_h,
+									unsigned *pixels, unsigned *column)
 {
 	register int	j;
 
@@ -89,8 +99,8 @@ void				cast_rays(t_wolf *wolf, const double angle,
 		}
 		column_h = HEIGHT / (t * SDL_cos(angle - wolf->player.a));
 		texture = get_texture(xy, wolf, &x_coord);
-		render_walls(i, column_h,
-						get_column(column_h, texture, x_coord), pixels);
+		render_wall(i, column_h, pixels,
+						get_column(column_h, t / wolf->ray_dist, texture, x_coord));
 		break ;
 	}
 }

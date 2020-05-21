@@ -40,7 +40,8 @@ void					read_map(const char *path, t_map *map_s,
 
 void					walls_init(t_wall *walls, SDL_PixelFormat *fmt,
 									const t_map map);
-void					render_clear(unsigned pixels[WIDTH * HEIGHT]);
+void					render_clear(Uint32 roof_c, Uint32 floor_c,
+										unsigned pixels[WIDTH * HEIGHT]);
 void					cast_rays(t_wolf *wolf, double angle, int i,
 									unsigned *pixels);
 

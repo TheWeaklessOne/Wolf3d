@@ -95,7 +95,7 @@ int					main(int argc, char *argv[])
 	while (sdl.running)
 	{
 		ft_time()->step = SDL_GetTicks();
-		render_clear(wolf.pixels);
+		render_clear(wolf.roof_c, wolf.floor_c, wolf.pixels);
 		render(&wolf, wolf.pixels);
 		SDL_UpdateWindowSurface(sdl.win);
 		ft_time()->delta = SDL_GetTicks() - ft_time()->step;

@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 16:11:46 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/20 19:22:34 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/22 02:27:18 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,11 @@ void			move_backward(t_wolf *wolf, const int *keys)
 void			angle_left(t_wolf *wolf, const int *keys)
 {
 	wolf->player.a -= 0.025 * (keys[SDL_SCANCODE_LSHIFT]
-			? 0.12 : 0.075) * ft_time()->delta;
+			? 0.1 : 0.075) * ft_time()->delta;
 }
 
 void			angle_right(t_wolf *wolf, const int *keys)
 {
 	wolf->player.a += 0.025 * (keys[SDL_SCANCODE_LSHIFT]
-			? 0.12 : 0.075) * ft_time()->delta;
+			? 0.1 : 0.075) * ft_time()->delta;
 }
