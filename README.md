@@ -59,9 +59,13 @@ Open standart map ⇣
 <td valign="top" height="30px">Change view angle to the right (faster with <kbd>&nbsp;shift&nbsp;</kbd>)</td>
 <td valign="top" align="center"><kbd>&nbsp;►&nbsp;</kbd></td>
 </tr>
-  <tr>
+<tr>
 <td valign="top" height="30px">Dark mode</td>
 <td valign="top" align="center"><kbd>&nbsp;space&nbsp;</kbd></td>
+</tr>
+<tr>
+<td valign="top" height="30px">Show/hide fps counter</td>
+<td valign="top" align="center"><kbd>&nbsp;f&nbsp;</kbd></td>
 </tr>
 <tr>
 <td valign="top" height="30px">Increase maximum ray range</td>
