@@ -23,7 +23,7 @@ void					wolf_init(t_wolf *wolf, const int argc, char *argv[])
 	wolf->ray_dist = RAY_DIST_DEF;
 	wolf->ray_step = RAY_STEP_DEF;
 	read_map(argv[1], &wolf->map, &wolf->player);
-	wolf->show_map =  wolf->map.map_w == wolf->map.map_h;
+	wolf->show_map = wolf->map.map_w == wolf->map.map_h;
 	wolf->roof_c = ROOF_COLOR;
 	wolf->floor_c = FLOOR_COLOR;
 }

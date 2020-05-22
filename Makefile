@@ -1,11 +1,11 @@
 NAME		=	wolf3d
 
 
-CC		=	gcc
+CC		=	clang
 
 uname_S		:= $(shell uname -s)
 
-FLAGS		= -Ofast -m64 -march=native -lSDL2 -lSDL2_image -Wall -Wextra -Werror
+FLAGS		= -Ofast -m64 -march=native -lSDL2 -lSDL2_image -lSDL2_ttf -Wall -Wextra -Werror
 
 DELTA		=	$$(echo "$$(tput cols)-47"|bc)
 

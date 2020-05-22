@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 00:43:48 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/22 02:20:05 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/22 21:03:09 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,9 @@ typedef union			u_argb
 
 typedef struct			s_time
 {
+	Uint32				now;
 	Uint32				step;
+	Uint32				start;
 	Uint32				delta;
 	Uint32				since_frame;
 }						t_time;
@@ -157,7 +159,9 @@ typedef struct			s_sdl
 {
 	SDL_Window			*win;
 	SDL_Surface			*surf;
+	TTF_Font			*font;
 	int					running;
+	int					show_fps;
 	void				(*do_key[SDL_NUM_SCANCODES])
 							(t_wolf *wolf, const int *keys);
 	int					keys[SDL_NUM_SCANCODES];

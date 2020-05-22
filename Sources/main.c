@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 15:05:44 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/20 18:50:44 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/22 20:33:20 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,22 +92,22 @@ int					main(int argc, char *argv[])
 
 	wolf_init(&wolf, argc, argv);
 	sdl_init(&sdl, &wolf);
+	ft_time_init();
 	while (sdl.running)
 	{
 		ft_time()->step = SDL_GetTicks();
 		render_clear(wolf.roof_c, wolf.floor_c, wolf.pixels);
 		render(&wolf, wolf.pixels);
-		SDL_UpdateWindowSurface(sdl.win);
-		ft_time()->delta = SDL_GetTicks() - ft_time()->step;
-		ft_time()->since_frame += ft_time()->delta;
+		ft_time_update();
 		if (ft_time()->since_frame >= ANIM_TIME && next_texture(wolf.walls))
 			ft_time()->since_frame -= ANIM_TIME;
 		if (MIN_FRAME_TIME > ft_time()->delta)
 			SDL_Delay(MIN_FRAME_TIME - ft_time()->delta);
+		show_fps(sdl.show_fps, sdl.font, sdl.surf);
+		SDL_UpdateWindowSurface(sdl.win);
 		while (SDL_PollEvent(&e))
 			manage_event(e, &sdl, &wolf);
 		manage_keys(&sdl, &wolf);
 	}
-	sdl_quit(&sdl);
 	exit(0);
 }

@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/19 00:40:43 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/22 02:23:31 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/22 20:41:10 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static unsigned		*get_column(const unsigned column_h, double percent,
 		ft_crash("Column malloc error!");
 	while (++i < column_h)
 	{
-		normal.color = texture.pixels[x_coord +(i * texture.h / column_h)
+		normal.color = texture.pixels[x_coord + (i * texture.h / column_h)
 										* texture.w];
 		fog.parts.a = 0;
 		fog.parts.r = normal.parts.r * t_percent + FOG_COLOR_R * percent;
@@ -100,7 +100,7 @@ void				cast_rays(t_wolf *wolf, const double angle,
 		column_h = HEIGHT / (t * SDL_cos(angle - wolf->player.a));
 		texture = get_texture(xy, wolf, &x_coord);
 		render_wall(i, column_h, pixels,
-						get_column(column_h, t / wolf->ray_dist, texture, x_coord));
+					get_column(column_h, t / wolf->ray_dist, texture, x_coord));
 		break ;
 	}
 }

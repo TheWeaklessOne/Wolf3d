@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 15:28:35 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/22 02:25:24 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/22 21:20:28 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,11 @@ void				manage_event(const SDL_Event e, t_sdl *sdl, t_wolf *wolf)
 			wolf->show_map = !wolf->show_map;
 		else if (e.key.keysym.sym == SDLK_m)
 			wolf->show_map = !wolf->show_map;
-		else if(e.key.keysym.sym == SDLK_SPACE)
+		else if (e.key.keysym.sym == SDLK_f)
+			sdl->show_fps = !sdl->show_fps;
+		else if (e.key.keysym.sym == SDLK_SPACE)
 		{
-			wolf->ray_dist = (wolf->ray_dist > 7) ? wolf->ray_dist = 7
-								: RAY_DIST_DEF;
+			wolf->ray_dist = (wolf->ray_dist > 7) ? 7 : RAY_DIST_DEF;
 			wolf->roof_c = (wolf->roof_c) ? 0 : ROOF_COLOR;
 			wolf->floor_c = (wolf->floor_c) ? 0 : FLOOR_COLOR;
 		}
@@ -72,12 +73,4 @@ void				manage_keys(t_sdl *sdl, t_wolf *wolf)
 	while (++i < SDL_NUM_SCANCODES)
 		if (sdl->keys[i] && sdl->do_key[i])
 			sdl->do_key[i](wolf, sdl->keys);
-}
-
-void				sdl_quit(t_sdl *sdl)
-{
-	SDL_DestroyWindow(sdl->win);
-	sdl->win = NULL;
-	IMG_Quit();
-	SDL_Quit();
 }

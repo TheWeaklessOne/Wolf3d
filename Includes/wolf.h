@@ -6,7 +6,7 @@
 /*   By: wstygg <wstygg@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 15:06:02 by wstygg            #+#    #+#             */
-/*   Updated: 2020/05/20 17:09:02 by wstygg           ###   ########.fr       */
+/*   Updated: 2020/05/22 21:07:20 by wstygg           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define WOLF3D_WOLF_H
 
 # include <SDL2/SDL.h>
+# include <SDL2/SDL_ttf.h>
 # include <SDL2/SDL_image.h>
 # include <SDL2/SDL_thread.h>
 
@@ -57,6 +58,11 @@ char					*ft_strjoin(char const *s1, char const *s2,
 										int to_free);
 
 t_time					*ft_time(void);
+void					ft_time_init(void);
+void					ft_time_update(void);
+
+void					show_fps(int show_fps, TTF_Font *font,
+									SDL_Surface *win);
 
 void					angle_left(t_wolf *wolf, const int *keys);
 void					angle_right(t_wolf *wolf, const int *keys);
@@ -65,7 +71,6 @@ void					move_backward(t_wolf *wolf, const int *keys);
 void					add_dist_or_step(t_wolf *wolf, const int *keys);
 void					sub_dist_or_step(t_wolf *wolf, const int *keys);
 
-void					sdl_quit(t_sdl *sdl);
 void					sdl_init(t_sdl *sdl, t_wolf *wolf);
 void					manage_keys(t_sdl *sdl, t_wolf *wolf);
 void					manage_event(SDL_Event e, t_sdl *sdl, t_wolf *wolf);
