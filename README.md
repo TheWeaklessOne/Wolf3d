@@ -1,6 +1,6 @@
 # Wolf3d
 
-Multithread raycasting engine builded on SDL2
+Multithread raycasting engine built on SDL2
 
 ![](promo.gif)
 
